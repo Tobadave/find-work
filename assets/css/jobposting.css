@@ -1,0 +1,104 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(190, 190, 190, 0.684);
+    background-image: url('../images/3dback.jpg');
+    backdrop-filter: blur(5px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    
+}
+
+ul li {
+    color: rgb(2, 71, 2)
+}
+
+.content{
+    margin-top: 0px;
+    border: 5px white none;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* padding-top: 50px; */
+}
+
+.form{
+    margin-top: 80px;
+    /* backdrop-filter: blur(10px); */
+    background-color: rgba(244, 244, 244, 0.387);
+    border: 1px gray dashed;
+    border-radius: 10px;
+    width: 180vh;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 400px 3fr;
+    box-shadow: rgb(0, 0, 0);
+}
+
+.vert{
+    vertical-align: top;
+    margin-top: 80px;
+    margin-left: 40px;
+    border-right: 1px solid rgb(164, 164, 164);
+    height: 350px;
+    position: relative;
+}
+
+.left-section{
+
+    border: none;
+    /* border-right: 2px solid; */
+    padding-left: 30px;
+    display: flex;
+    justify-content: center;
+
+    .left-content {
+
+    padding:10px;
+    background-color: rgba(114, 114, 114, 0.322);
+    /* border-radius: 10px; */
+    border: none;
+    height: 350px;
+    width: 320px;
+    align-self: center;
+    /* align-items: center; */
+}
+
+}
+.right-section{
+    border: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    .right-content {
+    margin-left: -100px;
+    margin-right: -100px;
+    padding:10px 20px;
+    background-color: rgba(114, 114, 114, 0.322);
+    border-radius: 5px;
+    border: none;
+    height: 350px;
+    width: 90%;
+    align-self: center;
+
+}
+
+.apply{
+        background-color: green;
+        float:right;
+        color: white;
+        font-weight: bold;
+        padding: 9px 15px;
+        border-radius: 10px;
+        border: none;
+    }
+
+
+}
+
+.apply:hover{
+        cursor: pointer;
+        background-color: rgb(0, 85, 0);
+    }
