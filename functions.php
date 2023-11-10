@@ -124,7 +124,7 @@ function fetchUserDetails($columnName = 'mail', $value)
 
 function loadErrorPage($title, $message, $code = 500)  {
     
-    $_SESSION['error_page_'] = '';
+    $_SESSION['error_page_'] = random_int(1, 100);
     $_SESSION['error_page_title'] = $title;
     $_SESSION['error_page_message'] = $message;
     $_SESSION['error_page_code'] = $code;
