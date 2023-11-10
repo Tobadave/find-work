@@ -10,6 +10,7 @@
     
     $error_code = isset($_SESSION['error_page_code']) && !empty($_SESSION['error_page_code']) ? $_SESSION['error_page_code'] : 500;
     $error_error_message =  isset($_SESSION['error_page_message']) && !empty($_SESSION['error_page_message']) ? $_SESSION['error_page_message'] : 'An Error Occured. Kindly Contact The Admin';
+    $error_title =  isset($_SESSION['error_page_title']) && !empty($_SESSION['error_page_title']) ? $_SESSION['error_page_title'] : 'An Error Occured. Kindly Contact The Admin';
 
     // http_response_code($error_code);
 
@@ -20,7 +21,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERROR TITLE</title>
+    <title><?php echo $error_title; ?></title>
     <style>
         *{
             margin: 0;
