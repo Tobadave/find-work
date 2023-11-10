@@ -1,3 +1,20 @@
+<?php 
+
+    require_once 'init.php';
+
+    if ( ! isset($_SESSION['error_page_']) )
+    {
+        header('Location: index.php');
+        exit;
+    }
+    
+    $error_code = isset($_SESSION['error_page_code']) && !empty($_SESSION['error_page_code']) ? $_SESSION['error_page_code'] : 500;
+    $error_error_message =  isset($_SESSION['error_page_message']) && !empty($_SESSION['error_page_message']) ? $_SESSION['error_page_message'] : 'An Error Occured. Kindly Contact The Admin';
+
+    // http_response_code($error_code);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,8 +84,10 @@
     </div>
 
     <div class="message">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsa qui amet placeat officia, impedit assumenda cupiditate consectetur eum temporibus consequatur nesciunt sint nam iure earum odit. Ratione, nulla maxime!
+        <?php echo $error_error_message; ?>
     </div>
 
 </body>
 </html>
+
+<?php unset($_SESSION['error_page_']); ?>
