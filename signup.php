@@ -31,17 +31,20 @@
     
     <div class="main">
             <div class="form" style="width: auto; height: auto; box-shadow: 5px 5px 10px rgba(49, 49, 49, 0.3); border: 1px solid rgba(0, 0, 0, 0.221); background-color: rgba(167, 167, 167, 0.111); ">
-
+ 
                 <div class="right-section" style="padding: 20px 0px; flex: 100px; padding: 30px 50px;">
 
                 <form action="assets/php/signup_logic.php" method="POST">
                     <center><h3 style="color: rgb(2, 43, 10)">SIGNUP</h3></center>
+
                     <div style="display: flex; flex-direction: column;">
-                    <input class="fill" style="width: 300px;" type="email" placeholder="Enter Username" name="email" id="">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="First Name" name="fname">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Last Name" name="lname" id="">
-                    <input class="fill" style="width: 300px;" type="tel" placeholder="Telephone" name="tel" id="">
-                    <input class="fill" style="width: 300px;" type="password" placeholder="Choose Password" name="pass" id="">
+                    <input class="fill" style="width: 300px;" type="email" placeholder="Email" name="email" id="">
+                    <!-- <input class="fill" style="width: 300px;" type="text" placeholder="First Name" name="fname">
+                    <input class="fill" style="width: 300px;" type="text" placeholder="Last Name" name="lname" id=""> -->
+                    <!-- <input class="fill" style="width: 300px;" type="tel" placeholder="Telephone" name="tel" id=""> -->
+                    <input class="fill" style="width: 300px;" type="password" placeholder="Password" name="pass" id="">
+                    <input class="fill" style="width: 300px;" type="password" placeholder="Re-enter Password" name="pass" id="">
+
 
 
                     <div class="radio">

@@ -6,10 +6,10 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
     $email = $_POST['email'];
-    $firstname = $_POST['fname'];
-    $lastname = $_POST['lname'];
-    $telephone = $_POST['tel'];
+    // $firstname = $_POST['fname'];
+    // $lastname = $_POST['lname'];
     $password = $_POST['pass'];
+    $password2 = $_POST['pass2'];
 
     // echo $email . "<br>";
     // echo $firstname . "<br>";
@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
     // exit;
 
-    if(!empty($email) && !empty($password) && !is_numeric($email))
+    if(!empty($email) && !empty($password) && !empty($password2) && !is_numeric($email))
     {
         // INSERT INTO `login_form` (`id`, `mail`, `fname`, `lname`, `tel`, `pass`) VALUES (NULL, '', '', '', '', '')
-        $query = "INSERT INTO login_form (mail, fname, lname, tel, pass) VALUES('$email','$firstname','$lastname','$telephone','$password')";
+        $query = "INSERT INTO login_form (mail, pass, pass2) VALUES('$email','$firstname','$lastname','$telephone','$password')";
 
         if ( mysqli_query($con, $query) )
         {
