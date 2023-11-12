@@ -65,16 +65,17 @@ require_once 'functions.php';
                         
                         <div class="lt">
 
-                            <input class="fill" type="text" placeholder="Useranme" value="<?php echo $user_email ?>">
                             <input class="fill" type="text" placeholder="firstname" value="<?php echo $user_first_name ?>" >
-                            <input class="fill" type="text" placeholder="Telephone" value="<?php echo $user_phone_number ?>" >
+                            <input class="fill" type="text" placeholder="Telephone" value="<?php echo $user_phone_number ?>">
+                            <input class="fill" type="text" placeholder="Email" value="<?php echo $user_email ?>">
+                            
 
                         </div>
                         <div class="rt">
-
-                            <input class="fill" type="password" placeholder="password" value="<?php echo $user_password ?>" >
+                            
                             <input class="fill" type="text" placeholder="lastname" value="<?php echo $user_last_name ?>" >
-                            <input class="fill" type="text" placeholder="Address">
+                            <input class="fill" type="text" placeholder="Resume link" value="">
+                            <input class="fill" type="password" placeholder="password" value="<?php echo $user_password ?>" >
 
                         </div>
                     </div>
@@ -84,9 +85,8 @@ require_once 'functions.php';
                     </div>
 
                     </div>
-                    Update Resume
-                    <div class="foot" style="justify-content: space-between; padding: 0px 10px;">
-                        <input type="file">
+                    <div class="foot" style="justify-content: space-between; padding: 0px 10px; ">
+                        <input type="file" style="visibility: hidden;" disabled >
                         <button class="edit">UPDATE</button>
                     </div>
 

@@ -2,101 +2,46 @@
     session_start();
 
     include("db.php");
-    include("../../functions.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
+    $email = $_POST['email'];
+    // $firstname = $_POST['fname'];
+    // $lastname = $_POST['lname'];
+    $password = $_POST['pass'];
+    $password2 = $_POST['pass2'];
 
-    function createUser() {
-        include("db.php");
-        
-        $email = $_POST['email'];
-        $password = $_POST['pass'];
-        $confirm_password = $_POST['c_pass'];
+    // echo $email . "<br>";
+    // echo $firstname . "<br>";
+    // echo $lastname . "<br>";
+    // echo $telephone . "<br>";
+    // echo $password . "<br>";
 
-        $role = $_POST['role'];
+    // exit;
 
-        if(!empty($email) && !empty($role) && !empty($password) &&!empty($confirm_password))
+    if(!empty($email) && !empty($password) && !empty($password2) && !is_numeric($email))
+    {
+        // INSERT INTO `login_form` (`id`, `mail`, `fname`, `lname`, `tel`, `pass`) VALUES (NULL, '', '', '', '', '')
+        $query = "INSERT INTO login_form (mail, pass, pass2) VALUES('$email','$firstname','$lastname','$telephone','$password')";
+
+        if ( mysqli_query($con, $query) )
         {
+            // echo "<script type='text/javascript'> alert('Sucessfully Register')</script>";
 
-            if ( !hash_equals($password, $confirm_password) )
-            {
-                echo "<script type='text/javascript'> alert('password is nto valid')</script>";
-                header("Location: ../../signup.php");
-                exit;
-            }
+            header("Location: ../../login.php");
 
-            $id = generateRandomStrings(20, 'USER_ID_');
-            $password = password_hash($password,  PASSWORD_DEFAULT);
-
-
-            $query = "INSERT INTO users (email, password, id, role) VALUES(?, ?, ?, ?)";
-
-            $stmt = mysqli_prepare($con, $query);
-            mysqli_stmt_bind_param($stmt, "ssss", $email, $password, $id, $role);
-
-            // if ( mysqli_query($con, $query) )
-            if (mysqli_stmt_execute($stmt) )
-            {
-                // echo "<script type='text/javascript'> alert('Sucessfully Register')</script>";
-
-                // echo "<h1>LOGIN PAGE</h1>";
-
-                loginUser($id, $email);
-
-                // $_COOKIE['registration_status'] = 1;
-                setcookie('registration_status', 1, 14000, '/');
-
-
-                // session_set_cookie_params();
-
-                header("Location: ../../signup_" . $role . "_page.php" );
-                exit;
-
-            }
-            else
-            {
-                echo "<script type='text/javascript'> alert('not Registered')</script>";
-
-            }
-            
         }
         else
         {
-            echo "<script type='text/javascript'> alert('Please Enter some valid Information')</script>";
+            echo "<script type='text/javascript'> alert('not Registered')</script>";
+
         }
-
-    }
-
-    function createApplicant()
-    {
-
-        $firstname = $_POST['fname'];
-        $lastname = $_POST['lname'];
-        $telephone = $_POST['tel'];
-
-        // setcookie('registration_status', 1, 14000, '/');
-
-
-    }
-
-//    session_get_cookie_params();
-    
-    if (  isset($_COOKIE['registration_status']) && ! empty( $_COOKIE['registration_status'] )  )
-    {
-        createUser();
-
         
     }
-
-    if ( isset($_COOKIE['registration_status']) || empty( $_COOKIE['registration_status'] ) || $_COOKIE['registration_status'] === 2  )
+    else
     {
-        // createApplicant();
-        echo "Create Applicant";
+        echo "<script type='text/javascript'> alert('Please Enter some valid Information')</script>";
     }
-
-    
-
 }
 
 ?>
