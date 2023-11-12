@@ -142,8 +142,7 @@ function fetchUserDetails($columnName = 'mail', $value)
 
     if ( mysqli_num_rows($results) !== 1 )
     {
-        echo "USER NOT FOUND";
-        exit;
+        return false;
     }
 
     $results = mysqli_fetch_assoc($results);

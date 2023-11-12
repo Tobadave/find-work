@@ -33,7 +33,10 @@ require_once 'functions.php';
                     <a href="manage.php">My Profile</a>
                 </li>
                 <li style="margin-left: 20px;">
-                    <a href="logout.php">Log out</a>
+                    <form action="logout.php" method="post">
+                        <button type="submit">Log out</button> 
+                    </form>
+                    <!-- <a href="logout.php">Log out</a> -->
                 </li>
             </div>
         </container>

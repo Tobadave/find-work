@@ -1,3 +1,12 @@
+<?php
+
+    require_once 'init.php';
+    require_once 'functions.php';
+
+    // $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
+    // checkIfNotLoggedInAndRedirect($redirectUrl);
+
+?>
 
 <?php include_once 'assets/layouts/head.php' ?>
 
@@ -169,26 +178,26 @@
                         <h1 style="color: rgb(0, 41, 0);">EMPLOYER</h1>
                     </div>
                     <div class="down">
-                        <form method="POST">
+                        <form action="assets/php/signup_logic.php" method="POST">
 
                         <div>
                             <div class = form2>
                             <label for="">Employer Name</label>
-                            <input type="text" placeholder="Full name">
+                            <input type="text" placeholder="Full name" name="emp_name" required>
                             
-                            <label for="">Email</label>
-                            <input type="email" placeholder="Your business email">
+                            <!-- <label for="">Email</label> -->
+                            <input type="hidden" placeholder="Your business email" name="emp_email" value="<?php echo fetchUserDetails('id', $_SESSION['id'])['email']; ?>" required>
                             
                             <label for="">Comapny Name</label>
-                            <input type="text" placeholder="Your company name">
+                            <input type="text" placeholder="Your company name" name="emp_comp_name" required>
                             
                             <label for="">Company Field</label>
-                            <input type="text" placeholder="Your company's field...">
+                            <input type="text" placeholder="Your company's field..." name="emp_feild" required>
                         
                             <label for="">Location</label>
-                            <input type="" inputmode="numeric" placeholder="Location..">
+                            <input type="" inputmode="numeric" placeholder="Location.." name="emp_location" required>
 
-                            <button>CONTINUE TO PROFILE &#8594;</button>
+                            <button type="submit">CONTINUE TO PROFILE &#8594;</button>
                             </div>
                         </div>
                     </form>

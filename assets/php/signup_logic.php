@@ -21,6 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         if(!empty($email) && !empty($role) && !empty($password) &&!empty($confirm_password))
         {
 
+            $user_email = fetchUserDetails('email', $email);
+
+            if ( $user_email !== false )
+            {
+                echo "Another User exist with this email Address";
+                exit;
+            }
+
+
             if ( !hash_equals($password, $confirm_password) )
             {
                 echo "<script type='text/javascript'> alert('password is nto valid')</script>";
@@ -49,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
                 loginUser($id, $email);
 
                 // $_COOKIE['registration_status'] = 1;
+                $_SESSION['registration_continue'] = $role;
                 setcookie('registration_status', 1, 0, '/');
                 
 
@@ -104,11 +114,48 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         {
 
             session_start();
-            setcookie('registration_status', 2, 0, '/');
+            unset($_SESSION['registration_continue']);
+            setcookie('registration_status', '', time() - 3600, '/');
 
             header("Location: ../../jobposting.php" );
             exit;
 
+        }
+
+    }
+
+    function createEmployeer() {
+        
+        include("db.php");
+
+        $employeer_name = $_POST['emp_name'];
+        // $employeer_company_email = $_POST['emp_email'];
+        $employeer_company_name = $_POST['emp_comp_name'];
+        $employeer_company_feild = $_POST['emp_feild'];
+        $employeer_company_location = $_POST['emp_location'];
+
+        if ( empty($employeer_name) || empty($employeer_company_name) || empty($employeer_company_feild) || empty($employeer_company_location)   )
+        {
+            echo "EMPTY FEILDS";
+            exit;
+        }
+
+        $user_id = $_SESSION['id'];
+
+        $user_email = fetchUserDetails('id', $user_id)['email'];
+
+        $query = "INSERT INTO employers (employer_name, company_name, employer_email, employer_feild, employer_id) VALUES (?,?,?,?,?) ";
+        $stmt = mysqli_prepare($con, $query);
+        mysqli_stmt_bind_param($stmt, "sssss", $employeer_name, $employeer_company_name, $user_email, $employeer_company_feild, $user_id );
+
+        if ( mysqli_stmt_execute($stmt) )
+        {
+            session_start();
+            unset($_SESSION['registration_continue']);
+            setcookie('registration_status', "", time() - 3600, '/');
+
+            header("Location: ../../empposting.php" );
+            exit;
         }
 
     }
@@ -120,10 +167,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         createUser();
     }
 
-    if ( isset($_COOKIE['registration_status']) && ! empty( $_COOKIE['registration_status'] ) && $_COOKIE['registration_status'] === '1'   )
+    if ( isset($_COOKIE['registration_status']) && ! empty( $_COOKIE['registration_status'] ) && $_COOKIE['registration_status'] === '1' && $_SESSION['registration_continue'] === 'client'  )
     {
         // || $_COOKIE['registration_status'] === 2
         createApplicant();
+        // echo "Create Applicant";
+    }
+
+    if ( isset($_COOKIE['registration_status']) && ! empty( $_COOKIE['registration_status'] ) && $_COOKIE['registration_status'] === '1' && $_SESSION['registration_continue'] === 'employeer'  )
+    {
+        // || $_COOKIE['registration_status'] === 2
+        createEmployeer();
         // echo "Create Applicant";
     }
 

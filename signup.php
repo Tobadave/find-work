@@ -54,8 +54,8 @@
                         </div>
                         
                         <div class="opt">
-                            <input type="radio" id="option2" name="role" value="employer">
-                            <label for="option2">I am a Freelancer</label>
+                            <input type="radio" id="option2" name="role" value="employeer">
+                            <label for="option2">I am a Employeer</label>
                         </div>
 
                     </div>
