@@ -43,18 +43,18 @@
                     <input class="fill" style="width: 300px;" type="text" placeholder="Last Name" name="lname" id=""> -->
                     <!-- <input class="fill" style="width: 300px;" type="tel" placeholder="Telephone" name="tel" id=""> -->
                     <input class="fill" style="width: 300px;" type="password" placeholder="Password" name="pass" id="">
-                    <input class="fill" style="width: 300px;" type="password" placeholder="Re-enter Password" name="pass" id="">
+                    <input class="fill" style="width: 300px;" type="password" placeholder="Re-enter Password" name="c_pass" id="">
 
 
 
                     <div class="radio">
                         <div class="opt">
-                            <input type="radio" id="option1" name="option" value="option1">
+                            <input type="radio" id="option1" name="role" value="client">
                             <label for="option1">I am a Client</label>
                         </div>
                         
                         <div class="opt">
-                            <input type="radio" id="option2" name="option" value="option2">
+                            <input type="radio" id="option2" name="role" value="employer">
                             <label for="option2">I am a Freelancer</label>
                         </div>
 
