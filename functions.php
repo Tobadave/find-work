@@ -27,7 +27,7 @@ function checkIfLoggedIn()
 {
 
 
-    if(isset($_SESSION['id']) && isset($_SESSION['name']))
+    if(isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['session']) )
     {
         return true;
     }
@@ -57,6 +57,37 @@ function checkIfNotLoggedInAndRedirect( $url )
     }
 
 }
+
+function loginUser($user_id, $user_name)
+{
+    if(isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['session'] ) )
+    {
+        logoutUser();
+    }
+
+    $_SESSION['id'] = $user_id;
+    $_SESSION['name'] = $user_name;
+    $_SESSION['session'] = generateRandomStrings(30, 'SSID_');
+
+    return true;
+
+}
+
+function logoutUser() {
+    
+    if(isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['session'] ) )
+    {
+
+        unset($_SESSION['id']);
+        unset($_SESSION['name']);
+        unset($_SESSION['session']);
+
+    }
+
+    return true;
+
+}
+
 
 function getCurrentPageURL()
 {
@@ -130,6 +161,36 @@ function loadErrorPage($title, $message, $code = 500)  {
     $_SESSION['error_page_code'] = $code;
 
     header('Location error.php?returnURL=' . getCurrentPageURL() );
+
+}
+
+function generateRandomStrings( int $length = 40,  string|int $prefix = '', string|int $suffix = '' ) : string 
+{
+    
+    if ($length === 0) 
+    {
+        $length = 40;
+    }
+
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTWXYZ";
+    
+    $generatedText = '';
+
+    if ( !empty($prefix) )
+    {
+        $generatedText = $prefix . substr(str_shuffle($chars), 0, $length);
+    }
+    else if ( !empty($suffix) )
+    {
+        $generatedText = substr(str_shuffle($chars), 0, $length) . $suffix;
+    }
+    else
+    {
+        $generatedText = substr(str_shuffle($chars), 0, $length);
+    }
+
+
+    return $generatedText;
 
 }
 

@@ -1,7 +1,7 @@
 
 <?php include_once 'assets/layouts/head.php' ?>
 
-    <title>SignUp Page</title>
+    <title>Welcome User </title>
 
     <style>
         input{
@@ -44,27 +44,14 @@
                 <div class="right-section" style="padding: 20px 0px; flex: 100px; padding: 30px 50px;">
 
                 <form action="assets/php/signup_logic.php" method="POST">
-                    <center><h3 style="color: rgb(2, 43, 10)">SIGNUP</h3></center>
+                    <center><h3 style="color: rgb(2, 43, 10)">OTHER INFORMATION</h3></center>
                     <div style="display: flex; flex-direction: column;">
-                    <input class="fill" style="width: 300px;" type="email" placeholder="Enter Email" name="email" id="">
-                    <input class="fill" style="width: 300px;" type="password" placeholder="Choose Password" name="pass" id="">
-                    <input class="fill" style="width: 300px;" type="password" placeholder="Confirm Password" name="c_pass" id="">
+                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter First Name" name="fname" id="">
+                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter Last Name" name="lname" id="">
+                    <input class="fill" style="width: 300px;" type="tel" placeholder="Enter Phone number" name="c_pass" id="">
 
-
-                    <div class="radio">
-                        <div class="opt">
-                            <input type="radio" id="option1" name="role" value="client">
-                            <label for="option1">I am a Client</label>
-                        </div>
-                        
-                        <div class="opt">
-                            <input type="radio" id="option2" name="role" value="employer">
-                            <label for="option2">I am a Employer</label>
-                        </div>
-
-                    </div>
                 </div>
-                <center> <input value="Create Account" type="submit" class="button"></center>
+                <center> <input value="next->" type="submit" class="button"></center>
             </form>
                 </div>
             </div>
