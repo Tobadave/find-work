@@ -1,10 +1,20 @@
+<?php
+
+    require_once 'init.php';
+    require_once 'functions.php';
+
+    $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
+    checkIfNotLoggedInAndRedirect($redirectUrl);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="assets/images/findwork.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit My Profile - FindWork</title>
+    <title>Create a New Job Opening - FindWork</title>
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <script src="http://localhost/@itms/fontawesome-free-6.4.0-web/js/all.min.js"></script>
 </head>
@@ -49,7 +59,7 @@
 
             <div class="contents">
 
-                <form method="post" class="edit-profile-form" >
+                <form method="post" action="assets/php/create_job_logic.php" class="edit-profile-form" >
 
                     <section>
                         <div class="heading">
