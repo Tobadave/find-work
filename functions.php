@@ -127,12 +127,12 @@ function fetchAllUsers()
 
 }
 
-function fetchUserDetails($columnName = 'mail', $value)
+function fetchUserDetails($columnName = 'mail', $value, string $table_name = "users")
 {
 
     include("assets/php/db.php");
 
-    $query = "SELECT * FROM users WHERE $columnName=?";
+    $query = "SELECT * FROM $table_name WHERE $columnName=?";
 
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "s", $value);
