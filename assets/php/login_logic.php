@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         $paassword_from_db = $results['password'];
 
-        if ( ! hash_equals($paassword_from_db, $password) )
+        if ( ! password_verify($paassword_from_db, $password) )
         {
             echo "PASSWORD IS NOT CORRECT";
             exit;
