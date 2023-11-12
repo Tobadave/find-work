@@ -132,7 +132,7 @@ function fetchUserDetails($columnName = 'mail', $value)
 
     include("assets/php/db.php");
 
-    $query = "SELECT * FROM login_form WHERE $columnName=?";
+    $query = "SELECT * FROM users WHERE $columnName=?";
 
     $stmt = mysqli_prepare($con, $query);
     mysqli_stmt_bind_param($stmt, "s", $value);

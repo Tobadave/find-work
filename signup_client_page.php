@@ -46,12 +46,25 @@
                 <form action="assets/php/signup_logic.php" method="POST">
                     <center><h3 style="color: rgb(2, 43, 10)">OTHER INFORMATION</h3></center>
                     <div style="display: flex; flex-direction: column;">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter First Name" name="fname" id="">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter Last Name" name="lname" id="">
-                    <input class="fill" style="width: 300px;" type="tel" placeholder="Enter Phone number" name="c_pass" id="">
+                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter First Name" name="fname" id="" required>
+                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter Last Name" name="lname" id="" required>
+                    <input class="fill" style="width: 300px;" type="tel" placeholder="Enter Phone number" name="tel" id="" required>
+
+                    <div class="info">
+                        <div class="list-items"></div>
+                        <input class="fill" style="width: 300px;" type="tel" placeholder="Enter your skills..." name="skills" id="" required>
+                    </div>
+
+                    <div class="info">
+                        <div class="list-items"></div>
+                        <input class="fill" style="width: 300px;" type="tel" placeholder="Enter your previous and current education insitutions..." name="education" id="" required>
+                    </div>
+
+                    <input class="fill" style="width: 300px;" type="tel" placeholder="Paste your resume or LinkedIn URL here..." name="resume_url" id="">
+
 
                 </div>
-                <center> <input value="next->" type="submit" class="button"></center>
+                <center> <input value="continue to profile" width="100%" type="submit" class="button"></center>
             </form>
                 </div>
             </div>
