@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
     if(!empty($username) && !empty($password))
     {
 
-        $query = "SELECT * FROM login_form WHERE mail=?";
+        $query = "SELECT * FROM users WHERE email=?";
 
         $stmt = mysqli_prepare($con, $query);
         mysqli_stmt_bind_param($stmt, "s", $username);
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         // var_dump($results);
         // echo "</pre>";
 
-        $paassword_from_db = $results['pass'];
+        $paassword_from_db = $results['password'];
 
         if ( ! hash_equals($paassword_from_db, $password) )
         {
