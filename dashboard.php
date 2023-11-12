@@ -1,3 +1,15 @@
+<?php
+require_once 'init.php';
+require_once 'functions.php';
+
+    $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
+    checkIfNotLoggedInAndRedirect($redirectUrl);
+
+    $userDetails = fetchUserDetails('id', $_SESSION['id']);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,41 +63,7 @@
 
                 <div class="cards card-4 admin-dashboard">
 
-                    <a href="index.php" class="card">
-                        <div class="icon">
-                            <i class="fas fa-external-link"></i>
-                        </div>
-                        <div class="text">
-                            go to home page
-                        </div>
-                    </a>
-
-                    <a href="#" class="card">
-                        <div class="icon">
-                            <i class="fas fa-user-cog"></i>
-                        </div>
-                        <div class="text">
-                            manage my profile
-                        </div>
-                    </a>
-
-                    <a href="#" class="card">
-                        <div class="icon">
-                            <i class="fas fa-plus-circle"></i>
-                        </div>
-                        <div class="text">
-                            create new job posting
-                        </div>
-                    </a>
-
-                    <a href="#" class="card">
-                        <div class="icon">
-                            <i class="fas fa-table"></i>
-                        </div>
-                        <div class="text">
-                            view all my jobs posted
-                        </div>
-                    </a>
+                <?php if ( $userDetails['role'] === 'client' ): ?>
 
                     <a href="index.php" class="card">
                         <div class="icon">
@@ -122,6 +100,46 @@
                             view all my applied jobs
                         </div>
                     </a>
+
+                <?php else: ?>
+
+                    <a href="index.php" target="_blank" class="card">
+                        <div class="icon">
+                            <i class="fas fa-external-link"></i>
+                        </div>
+                        <div class="text">
+                            go to home page
+                        </div>
+                    </a>
+
+                    <a href="manage.php" class="card">
+                        <div class="icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <div class="text">
+                            manage my profile
+                        </div>
+                    </a>
+
+                    <a href="create_job.php" class="card">
+                        <div class="icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="text">
+                            create new job posting
+                        </div>
+                    </a>
+
+                    <a href="view_my_jobs.php" class="card">
+                        <div class="icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="text">
+                            view all my jobs posted
+                        </div>
+                    </a>
+
+                    <?php endif; ?>
 
                     <form action="logout.php" method="post" class="card bg-danger">
                         <div class="icon">

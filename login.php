@@ -3,13 +3,7 @@
     require_once 'init.php';
     require_once 'functions.php';
 
-    // $isLoggedIn = (checkIfLoggedIn() === true) ? true : 'false';
-
-    echo checkIfLoggedIn();
-
     checkIfLoggedInAndRedirect('jobposting.php');
-
-
 
 ?>
 

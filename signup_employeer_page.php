@@ -3,8 +3,8 @@
     require_once 'init.php';
     require_once 'functions.php';
 
-    // $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
-    // checkIfNotLoggedInAndRedirect($redirectUrl);
+    $redirectUrl = 'signup.php';
+    checkIfNotLoggedInAndRedirect($redirectUrl);
 
 ?>
 
