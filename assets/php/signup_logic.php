@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
             unset($_SESSION['registration_continue']);
             setcookie('registration_status', '', time() - 3600, '/');
 
-            header("Location: ../../jobposting.php" );
+            header("Location: ../../dashboard.php" );
             exit;
 
         }
@@ -154,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
             unset($_SESSION['registration_continue']);
             setcookie('registration_status', "", time() - 3600, '/');
 
-            header("Location: ../../empposting.php" );
+            header("Location: ../../dashboard.php" );
             exit;
         }
 
