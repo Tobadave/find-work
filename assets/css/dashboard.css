@@ -216,6 +216,8 @@ a:hover
     
 }
 
+/* ADMIN PAGE */
+
 .admin-dashboard .card
 {
     display: flex;
@@ -242,4 +244,62 @@ a:hover
     justify-content: center;
     font-size: 1.72rem;
     margin-bottom: 20px;
+}
+
+/* MANGE PROFILE PAGE */
+
+.edit-profile-form
+{
+    display: block;
+}
+
+.edit-profile-form .input
+{
+    margin: 10px 0;
+    width: 100%;
+}
+
+.edit-profile-form .input-group
+{
+    display: flex;
+}
+
+.edit-profile-form .input-group .input
+{
+    width: 49%;
+    margin-right: 5px;
+}
+
+.edit-profile-form .input label
+{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.edit-profile-form .input input,
+.edit-profile-form .input select,
+.edit-profile-form .input button,
+.edit-profile-form .input textarea
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    background: none;
+    border-bottom: 1px solid var(--text-black);
+}
+
+.edit-profile-form .input textarea
+{
+    min-height: 200px;
+    resize: horizontal;
+}
+
+.edit-profile-form .input button
+{
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border-bottom: none;
 }

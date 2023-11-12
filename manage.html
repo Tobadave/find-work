@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="assets/images/findwork.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit My Profile - FindWork</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <script src="http://localhost/@itms/fontawesome-free-6.4.0-web/js/all.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="left">
+
+            <div class="header">
+                <div class="logo">
+                    <img src="assets/images/findwork.png" alt="">
+                </div>
+            </div>
+
+            <div class="main"></div>
+
+            <div class="footer"></div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="navbar">
+
+                <div></div>
+
+                <div class="nav-items">
+
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user"></i>
+                        my profile
+                    </a>
+
+                    <form action="logout.php" class="nav-item">
+                        <button>logout</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="contents">
+
+                <form class="edit-profile-form" >
+
+                    <div class="heading">
+                        <h1><i class="fas fa-user-cog"></i> Manage My Profile.</h1>
+                        <br>
+                        <p>Make Updates to my  profile...</p>
+                    </div>
+
+                    <br>
+                    <hr>
+                    <br>
+
+                    <section>
+
+                        <div class="heading">
+                            <h3><i class="fas fa-user-cog"></i> Change My personal information.</h3>
+                            <br>
+                            <p>Want to make updates to your personal info?</p>
+                        </div>
+    
+                        <br>
+                        <hr>
+                        <br>
+
+
+                        <div class="input-group">
+
+                            <div class="input">
+                                <label for="">first Name</label>
+                                <input type="text" name="fname">
+                            </div>
+
+                            <div class="input">
+                                <label for="">last Name</label>
+                                <input type="text" name="lname">
+                            </div>
+
+                        </div>
+
+                        <div class="input">
+                            <label for="">Email</label>
+                            <input type="text" name="email">
+                        </div>
+
+                        <div class="input">
+                            <label for="">Resume Link</label>
+                            <input type="url" name="resume_url">
+                        </div>
+
+                        <div class="input">
+                            <label for="">Company Name</label>
+                            <input type="text">
+                        </div>
+
+                        <div class="input">
+                            <label for="">company feild</label>
+                            <input type="text">
+                        </div>
+
+
+                    </section>
+
+                    <section>
+
+                        <div class="heading">
+                            <h3><i class="fas fa-user-cog"></i> Change My Password.</h3>
+                            <br>
+                            <p>Want to make updates to your password?</p>
+                        </div>
+    
+                        <br>
+                        <hr>
+                        <br>
+
+                        <div class="input">
+                            <label for="">Old Password</label>
+                            <input type="password" name="old_pass">
+                        </div>
+
+                        <div class="input">
+                            <label for="">New Password</label>
+                            <input type="password" name="new_pass">
+                        </div>
+
+                        <div class="input">
+                            <label for="">Confirm New Password</label>
+                            <input type="password" name="c_new_pass">
+                        </div>
+
+                    </section>
+
+                    <div class="input">
+                        <button type="submit">Update profile</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
