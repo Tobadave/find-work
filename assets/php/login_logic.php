@@ -1,7 +1,12 @@
 <?php
     session_start();
+    require_once '../../functions.php';
 
-    include("db.php");
+    include_once("db.php");
+
+    $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
+    checkIfNotLoggedInAndRedirect($redirectUrl);
+    
 
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
@@ -50,18 +55,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         $paassword_from_db = $results['password'];
 
-        if ( ! password_verify($paassword_from_db, $password) )
+        // echo $paassword_from_db . '<br>';
+
+        // echo password_verify($password, $paassword_from_db);
+
+        // exit;
+
+        if ( ! password_verify($password, $paassword_from_db) )
         {
             echo "PASSWORD IS NOT CORRECT";
             exit;
         }
 
-        echo "<h1>YOU ARE SUCCESSFULLY LOGGED IN. START SESSION CREATION</h1>";
+        // echo "<h1>YOU ARE SUCCESSFULLY LOGGED IN. START SESSION CREATION</h1>";
 
         // session_start();
 
-        $_SESSION['id'] = $results['id'];
-        $_SESSION['name'] = $results['fname'] . $results['lname'];
+        // $_SESSION['id'] = $results['id'];
+        // $_SESSION['name'] = $results['fname'] . $results['lname'];
+
+        loginUser($results['id'], $username);
 
         if ( isset($redirect_url) && ! empty( $redirect_url ) )
         {
