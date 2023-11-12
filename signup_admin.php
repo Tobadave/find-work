@@ -2,67 +2,201 @@
 <?php include_once 'assets/layouts/head.php' ?>
 
     <title>SignUp Page</title>
+        <style>
+            body{
+                padding: 0px;
+                margin: 0px;
+            
+            } 
+            .cont{
+                outline:2px solid green;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                height: 100vh;
+            }
+            .contain{
+                border: 3px solid;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                flex: 1 1 1;
+                padding: 10px;
+                justify-content: space-evenly;
+
+            }
+            .posting{
+                background-color: rgb(220, 220, 220);
+                display: grid;
+                grid-template-rows: 50px 1fr 50px;
+                width: 30%;
+                height: 300px;
+                border: 1px solid;
+            }
+            .div{
+                padding: 2px;
+                }
+                .one{
+                    padding: 2px;
+                }
+                button{
+                    float: right;
+                    margin: 5px;
+                    /* margin-right: 5px; */
+                }
+
+                /* a{
+                    text-decoration: none;
+                } */
+
+                .background { 
+                    width: 90%;
+                    height: 500px;
+                    align-self: center;
+                    border: 2px solid rgba(0, 0, 0, 0.363);
+                    background-color: #ececec80;
+                    backdrop-filter: blur(5px);
+                    display: grid;
+                    padding: 10px;
+                    padding-bottom: 15px;
+                    grid-template-rows: 50px 1fr;
+                    border-radius: 8px;
+
+                    .up,.down {
+                        padding:0px;
+                        /* border: 1px solid; */
+                        height: auto;
+                        display: flex;
+                        /* flex-direction: rows; */
+                        justify-content: center;
+                        
+                        align-items: center;
+
+                    }
+
+                }
+                input{
+                        outline: none;
+                        border-radius: 5px;
+                        border: none;
+                        height: 20px;
+                        padding: 5px 10px;
+                        margin-bottom: 15px;
+                    }
+                    input:last-child{
+                        border-radius: none;
+                        border: none;
+
+                    }
+                    label{
+                        font-size: 13px;
+                        font-weight: 600;
+                        margin-left: 10px;
+                        margin-bottom:5px;
+                    }
+                    .form2{
+                        border: 2px solid green; padding:10px; display:flex; flex-direction: column;
+                        width: 500px; border-radius: 10px; justify-content: none;
+                        background-color: rgba(0, 128, 0, 0.044);
+                    }
+                    button{
+                        background-color: rgb(0, 98, 0);
+                        color: white;
+                        font-weight: bold;
+                        padding: 0px 20px;
+                        border: none;
+                        border-radius:7px;
+                        padding: 10px;
+                    }
+                    button:hover{
+                        cursor: pointer;
+                    }
+        </style>
 </head>
 <body>
 
+    
     <container class="navbar">
         <div style="display: flex; align-items: center; border-right: 1px solid rgb(2, 96, 2); padding-right: 40px;">
             <img class="logo" src="assets/images/findwork.png" alt="">
             <text style="color: rgb(2, 96, 2); font-weight: bold; font-size: 30px;">FindWORK</text>
         </div>
 
-        <!-- <div class="center">
-            <li><a href="">FEED</a></li>
-            <li><a href=""> HOME</a></li>
-            <li><a href=""> CONTACT US</a></li>
+        <div class="center" style="width: 250px; margin-left: -200px;">
+            <!-- <li><a href="">FEED</a></li> -->
+            <li><a href="empposting.html"> POST JOBS</a></li>
+            <li><a href="#"> CONTACT US</a></li>
 
 
         </div>
 
             <div class="right">
                 <li>
-                    <a href="manage.php">My Profile</a>
+                    <!-- <a href="manage.php">My Profile</a> -->
                 </li>
                 <li style="margin-left: 20px;">
                     <a href="logout.php">Log out</a>
                 </li>
-            </div> -->
+            </div>
         </container>
-    
-    <div class="main">
-            <div class="form" style="width: auto; height: auto; box-shadow: 5px 5px 10px rgba(49, 49, 49, 0.3); border: 1px solid rgba(0, 0, 0, 0.221); background-color: rgba(167, 167, 167, 0.111); ">
-
-                <div class="right-section" style="padding: 20px 0px; flex: 100px; padding: 30px 50px;">
-
-                <form action="assets/php/signup_logic.php" method="POST">
-                    <center><h3 style="color: rgb(2, 43, 10)"> EMPLOYEER SIGNUP</h3></center>
-                    <div style="display: flex; flex-direction: column;">
-                    <input class="fill" style="width: 300px;" type="email" placeholder="Company Name" name="email" id="">
-                    <!-- <input class="fill" style="width: 300px;" type="text" placeholder="First Name" name="fname">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Last Name" name="lname" id=""> -->
-                    <input class="fill" style="width: 300px;" type="email" placeholder="Email" name="tel" id="">
-                    <input class="fill" style="width: 300px;" type="password" placeholder="Choose Password" name="pass" id="">
-
-
-                    <div class="radio">
-                        <div class="opt">
-                            <input type="radio" id="option1" name="option" value="option1">
-                            <label for="option1">I am a Client</label>
+            <div class="cont">
+                <!-- <div class="contain">
+                    
+                    <div class="posting">
+                        <div>
+                            okay
                         </div>
-                        
-                        <div class="opt">
-                            <input type="radio" id="option2" name="option" value="option2">
-                            <label for="option2">I am a Freelancer</label>
+                        <div>
+                            okay
+                        </div>
+                        <div>
+                            <button>POST JOB</button>
                         </div>
 
                     </div>
+                    <div class="posting">
+
+                    </div>
+                    <div class="posting">
+
+                    </div>
+                </div> -->
+                
+                <div class="background">
+                    <div class="up">
+                        <h1 style="color: rgb(0, 41, 0);">EMPLOYER</h1>
+                    </div>
+                    <div class="down">
+                        <form method="POST">
+
+                        <div>
+                            <div class = form2>
+                            <label for="">Employer Name</label>
+                            <input type="text" placeholder="Full name">
+                            
+                            <label for="">Email</label>
+                            <input type="email" placeholder="Your business email">
+                            
+                            <label for="">Comapny Name</label>
+                            <input type="text" placeholder="Your company name">
+                            
+                            <label for="">Company Field</label>
+                            <input type="text" placeholder="Your company's field...">
+                        
+                            <label for="">Location</label>
+                            <input type="" inputmode="numeric" placeholder="Location..">
+
+                            <button>CONTINUE TO PROFILE &#8594;</button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
-                <center> <input value="Create Account" type="submit" class="button"></center>
-            </form>
+           
                 </div>
-            </div>
-        </div>
-    </div>
+
 
 </body>
 </html>
