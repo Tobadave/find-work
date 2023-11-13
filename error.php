@@ -76,7 +76,24 @@
             font-weight: bold;
         }
 
+        .btn
+        {
+            text-decoration: none;
+            color: green;
+            font-size: 20px;
+            /* display: block; */
+            margin: 10px;
+            display: inline-flex;
+        }
+
+        .btn svg
+        {
+            margin: 0 5px;
+        }
+
     </style>
+    <script src="http://localhost/@itms/fontawesome-free-6.4.0-web/js/all.min.js"></script>
+
 </head>
 <body>
     
@@ -86,6 +103,11 @@
 
     <div class="message">
         <?php echo $error_error_message; ?>
+    </div>
+
+    <div>
+        <a href="index.php" class="btn" > <i class="fas fa-home"></i> Go Home</a>
+        <a href="dashboard.php" class="btn" > <i class="fas fa-dashboard"></i> Go To Dashboard</a>
     </div>
 
 </body>
