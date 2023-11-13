@@ -1,3 +1,19 @@
+<?php 
+
+    // Include necessary files and functions
+    require_once 'init.php';
+    require_once 'functions.php';
+
+    // Set the redirect URL to the login page with the current page URL as a parameter
+    // $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
+
+    // Check if the user is not logged in and redirect to the login page if necessary
+    // checkIfNotLoggedInAndRedirect($redirectUrl);
+
+    $allJobs = fetchAllDataFromATable('jobs');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +38,7 @@
 
                 <div class="nav-items">
 
-                    <a href="#" class="nav-item">
+                    <a href="manage.php" class="nav-item">
                         <i class="fas fa-user"></i>
                         my profile
                     </a>
@@ -37,7 +53,7 @@
 
             <div class="contents">
 
-                <div class="cards card-4 jobs-list">
+                <!-- <div class="cards card-4 jobs-list">
 
                     <div class="card">
                         <h3 class="title">
@@ -57,6 +73,34 @@
                         <a href="job_apply.php?job-id=" class="btn">Apply For Job</a>
                     </div>
 
+                </div> -->
+
+                <div class="cards card-4 jobs-list">
+                    <?php foreach( $allJobs as $job ) : ?>
+
+                            <div class="card">
+                                <h3 class="title">
+                                    <?php echo $job['job_title']; ?>
+                                </h3>
+                                <p class="description">
+                                    <?php echo $job['job_description'] ?>
+                                </p>
+                                <div class="company">
+                                    <?php echo fetchUserDetails('employer_id', $job['job_author_id'], 'employers' )['company_name'] ?>
+                                </div>
+
+                                <div class="skills">
+                                    <span><b>Skills: </b></span> HTML, CSS, JS, BOOTSRAP
+                                </div>
+
+                                <div class="skills">
+                                    <span><b>Due Date: </b></span> <?php echo $job['job_end_date'] ?>
+                                </div>
+
+                                <a href="job_apply.php?job-id=<?php echo $job['job_id'] ?>" class="btn">Apply For Job</a>
+                            </div>
+
+                    <?php endforeach; ?>
                 </div>
 
             </div>

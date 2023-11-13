@@ -151,6 +151,7 @@ a:hover
 {
     display: flex;
     flex-wrap: wrap;
+    word-wrap:break-word;
 }
 
 .container  .contents .cards .card 
@@ -168,6 +169,7 @@ a:hover
 .container  .contents .cards.card-4 .card 
 {
     flex: 0 0 24%;
+    /* width: 24%; */
     margin: 0 5px;
 }
 
@@ -315,13 +317,17 @@ a:hover
 /* JOBS LIST */
 
 .jobs-list
-{}
+{
+    width: 100%;
+    /* border: red solid 2px; */
+}
 
 .jobs-list .card 
 {
     border: #313131 solid 4px;
     padding: 0.5rem;
     border-radius: 3px;
+    /* width: 20%; */
 }
 
 .jobs-list .card .title
@@ -334,6 +340,9 @@ a:hover
 {
     margin: 10px 0;
     line-height: 27px;
+    word-wrap: break-word;
+    word-break: keep-all;
+    /* width: 50%; */
 }
 
 .jobs-list .card .company

@@ -163,7 +163,7 @@ function getCurrentPageURL()
  */
 function fetchAllUsers($con)
 {
-    /** SQL query to select all users from the 'login_form' table */
+    /** SQL query to select all users from the 'users' table */
     $query = "SELECT * FROM users";
 
     /** Prepare the SQL query using MySQLi prepared statement */
@@ -266,6 +266,36 @@ function updateItem(string $table_name, string $columnName, string $value, $idNa
     /** Return false if the update is not successful */
     return false;
 }
+
+function fetchAllDataFromATable($tableName)
+{
+    include("assets/php/db.php");
+
+    /** SQL query to select all rows from the specified table */
+    $query = "SELECT * FROM $tableName";
+
+    /** Prepare the SQL query using MySQLi prepared statement */
+    $stmt = mysqli_prepare($con, $query);
+
+    /** Execute the prepared statement */
+    mysqli_stmt_execute($stmt);
+
+    /** Get the result set from the executed statement */
+    $results = mysqli_stmt_get_result($stmt);
+
+    /** Check if any rows are found in the database */
+    if (mysqli_num_rows($results) === 0) {
+        /** Print an error message if no rows are found and exit the script */
+        return false;
+    }
+
+    /** Fetch all rows of the result set as an associative array */
+    $data = mysqli_fetch_all($results, MYSQLI_ASSOC);
+
+    /** Return the associative array containing all rows of data */
+    return $data;
+}
+
 
 /**
  * Loads the error page with the specified title, message, and status code.
