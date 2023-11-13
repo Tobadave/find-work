@@ -31,6 +31,12 @@
         exit;
     }
 
+    if ( hash_equals( fetchUserDetails('applicant_id', $_SESSION['id'], 'applications')['job_id'], $_GET['job-id'] ) )
+    {
+        loadErrorPage('JOB APPLIED ALREADY', 'YOU HAVE ALREADY APPLIED FOR THIS JOB');
+        exit;
+    }
+
     $user_info = fetchUserDetails('applicant_id', $_SESSION['id'], 'applicants');
     $job_info = fetchUserDetails('job_id', $_GET['job-id'], 'jobs');
 
