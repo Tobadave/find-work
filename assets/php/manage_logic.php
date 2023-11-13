@@ -11,6 +11,7 @@
         exit;
     }
 
+    // Check if the form with the name "emp_info" was submitted
     if (isset($_POST["emp_info"])) {
         // Fetch employer information from the database
         $compInfo = fetchUserDetails('employer_id', $_SESSION['id'], 'employers');
@@ -83,4 +84,44 @@
             header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
         }
     }
+
+    if ( isset($_POST['password_info']) )
+    {
+
+        // Get user info for password change
+        $paassword_from_db = fetchUserDetails('id',$_SESSION ['id'])['password'];
+
+        $old_password_from_user = $_POST['old_pass'];
+        $new_password_from_user = $_POST['new_pass'];
+        $confirm_password_from_user = $_POST['con_pass'];
+
+        // Validate old password    
+
+        if ( ! password_verify( $old_password_from_user , $paassword_from_db ) )
+        {
+            echo "Your Old Password does not match. Try again";
+            exit;
+        }
+
+        if ( ! hash_equals( $new_password_from_user, $confirm_password_from_user ) )
+        {
+            echo "Your New Passwords Don't Match";
+            exit;
+        }
+
+        $new_password_from_user = password_hash($new_password_from_user, PASSWORD_DEFAULT);
+
+        // Update new password in database
+        if (!updateItem('users','password',$new_password_from_user,'id',$_SESSION['id']))
+        {
+            echo "AN ERROR Occured and Your Password Could not be CHanged";
+            exit;
+        }
+
+        echo "SUCCESS";
+        header('Location: ../../manage.php?code=200&message=Password_Changed_Success');
+        exit;
+    }
+        
+
 ?>

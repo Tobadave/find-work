@@ -4,8 +4,8 @@
 
     include_once("db.php");
 
-    $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
-    checkIfNotLoggedInAndRedirect($redirectUrl);
+    // $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
+    // checkIfNotLoggedInAndRedirect($redirectUrl);
     
 
 if ($_SERVER["REQUEST_METHOD"] === "POST")

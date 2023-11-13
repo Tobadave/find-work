@@ -93,7 +93,7 @@
                         my profile
                     </a>
 
-                    <form action="logout.php" class="nav-item">
+                    <form action="logout.php" method="post" class="nav-item">
                         <button>logout</button>
                     </form>
 
@@ -192,7 +192,7 @@
                     </section>
                 </form>
 
-                <form class="edit-profile-form" >
+                <form method="post" action="assets/php/manage_logic.php" class="edit-profile-form" >
 
                     <section>
 
@@ -218,11 +218,11 @@
 
                         <div class="input">
                             <label for=""><i class="fas fa-unlock-keyhole"></i> Confirm New Password</label>
-                            <input type="password" name="c_new_pass">
+                            <input type="password" name="con_pass">
                         </div>
 
                         <div class="input">
-                            <button type="submit"> <i class="fas fa-lock"></i> Update my password</button>
+                            <button type="submit" name="password_info"> <i class="fas fa-lock"></i> Update my password</button>
                         </div>
 
                     </section>
