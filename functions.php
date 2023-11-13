@@ -267,6 +267,32 @@ function updateItem(string $table_name, string $columnName, string $value, $idNa
     return false;
 }
 
+function deleteItem(string $table_name, string $columnName, mixed $columValue)
+{
+    
+    /** Include the database connection file */
+    include("assets/php/db.php");
+
+    $query =  "DELETE FROM $table_name WHERE `$table_name`.`$columnName` = ?";
+
+    /** Prepare the SQL query using MySQLi prepared statement */
+    $stmt = mysqli_prepare($con, $query);
+
+    /** Bind the parameters to the prepared statement */
+    mysqli_stmt_bind_param($stmt, "s", $columValue);
+
+    /** Execute the prepared statement and check if the update is successful */
+    if (mysqli_stmt_execute($stmt))
+    {
+        /** Return true if the update is successful */
+        return true;
+    }
+
+    /** Return false if the update is not successful */
+    return false;
+
+}
+
 function fetchAllDataFromATable($tableName)
 {
     include("assets/php/db.php");
