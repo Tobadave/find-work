@@ -108,9 +108,9 @@
                             <td>
                                 <div class="btn-group">
                                     <a href="edit_job.php?job-id=<?php echo $myJob['job_id'] ?>" class="btn"> <i class="fas fa-pen"></i> Edit Job</a>
-                                    <form action="job_delete_logic.php" method="post">
+                                    <form action="assets/php/delete_job_logic.php" method="post">
                                         <input type="hidden" name="job_id" value="<?php echo $myJob['job_id'] ?>">
-                                        <button type="submit" class="bg-danger"> <i class="fas fa-backspace"></i> Delete job</button>
+                                        <button type="submit" class="bg-danger" name="delete_job"> <i class="fas fa-backspace"></i> Delete job</button>
                                     </form>
                                 </div>
                             </td>

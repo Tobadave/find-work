@@ -411,13 +411,13 @@ a:hover
 
 .table tbody tr:hover
 {
-    background: #7d7d7d;
+    background: #6b5d5d;
     color: var(--text-white);
 }
 
 .table tbody tr:nth-child(even)
 {
-    background: #4b4b4b;
+    background: #524545;
     color: var(--text-white);
     opacity: 0.8;
 }
@@ -442,7 +442,7 @@ a:hover
     /* width: 150px !important; */
     text-align: center;
     height: 100%;
-    background: var(--text-dark);
+    background: var(--bg-dark);
     color: var(--text-white);
     border-inline-end: var(--text-white) solid 2px;
 }
