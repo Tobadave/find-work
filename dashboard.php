@@ -74,7 +74,7 @@ require_once 'functions.php';
                         </div>
                     </a>
 
-                    <a href="#" class="card">
+                    <a href="manage.php" class="card">
                         <div class="icon">
                             <i class="fas fa-user-cog"></i>
                         </div>
@@ -83,7 +83,7 @@ require_once 'functions.php';
                         </div>
                     </a>
 
-                    <a href="#" class="card">
+                    <a href="view-jobs.php" class="card">
                         <div class="icon">
                             <i class="fas fa-plus-circle"></i>
                         </div>
