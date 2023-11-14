@@ -12,6 +12,8 @@
         exit;
     }
 
+    $id = $_COOKIE['registration_id'];
+
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>
@@ -53,7 +55,7 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <!-- <label class="label" for="name"> <i class="fas fa-evelope"></i> Email</label> -->
-                                    <input type="hidden" placeholder="Your business email" name="emp_email" value="<?php echo fetchUserDetails('id', $_SESSION['id'])['email']; ?>" required>
+                                    <input type="hidden" placeholder="Your business email" name="emp_email" value="<?php echo fetchUserDetails('id', $id)['email']; ?>" required>
 
                                 </div>
                                 <div class="form-group mb-3">
@@ -67,6 +69,8 @@
                                 <div class="form-group mb-3">
                                 <label for="">Location</label>
                             <input type="text" placeholder="Location.." name="emp_location" required>
+
+                            <input type="hidden" name="id" name="id" value="<?php echo $id?>">
 
                                 </div>
 

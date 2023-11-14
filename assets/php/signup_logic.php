@@ -55,11 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
                 session_start();
 
-                loginUser($id, $email);
+                if( ! checkIfLoggedIn() && fetchUserDetails('id', $_SESSION['id']) === false )
+                {
+                    loginUser($id, $email);
+                }
 
                 // $_COOKIE['registration_status'] = 1;
                 $_SESSION['registration_continue'] = $role;
                 setcookie('registration_status', 1, 0, '/');
+                setcookie('registration_id', $id, 0, '/');
                 
 
 
@@ -116,6 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
             session_start();
             unset($_SESSION['registration_continue']);
             setcookie('registration_status', '', time() - 3600, '/');
+            setcookie('registration_id', '', time() - 3600, '/');
 
             header("Location: ../../dashboard.php" );
             exit;
@@ -134,13 +139,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         $employeer_company_feild = $_POST['emp_feild'];
         $employeer_company_location = $_POST['emp_location'];
 
+        $id = $_POST['id'];
+
         if ( empty($employeer_name) || empty($employeer_company_name) || empty($employeer_company_feild) || empty($employeer_company_location)   )
         {
             echo "EMPTY FEILDS";
             exit;
         }
 
-        $user_id = $_SESSION['id'];
+        // $user_id = $_SESSION['id'];
+        $user_id = $id;
+
+        echo $user_id;
 
         $user_email = fetchUserDetails('id', $user_id)['email'];
 
