@@ -1,3 +1,12 @@
+<?php 
+
+    require_once 'init.php';
+    require_once 'functions.php';
+
+    checkIfLoggedInAndRedirect('dashboard.php');
+
+?>
+
 
 <?php include_once 'assets/layouts/head.php' ?>
 

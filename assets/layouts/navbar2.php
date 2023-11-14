@@ -21,7 +21,7 @@
 
     <?php if( checkIfLoggedIn() ): ?>
 
-        <form action="logout.php" class="nav-item bg-danger">
+        <form action="logout.php" method="post" class="nav-item bg-danger">
             <button>logout</button>
         </form>
 
