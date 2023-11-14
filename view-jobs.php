@@ -26,29 +26,7 @@
             <?php include_once 'assets/layouts/navbar.php' ?>
 
             <div class="contents">
-
-                <!-- <div class="cards card-4 jobs-list">
-
-                    <div class="card">
-                        <h3 class="title">
-                            Example Title
-                        </h3>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor enim assumenda perspiciatis inventore ex, praesentium deserunt quia impedit consequuntur reiciendis possimus ratione magni non voluptatem aliquam aspernatur laborum labore tempore.
-                        </p>
-                        <div class="company">
-                            Company Name
-                        </div>
-
-                        <div class="skills">
-                            <span><b>Skills: </b></span> HTML, CSS, JS, BOOTSRAP
-                        </div>
-
-                        <a href="job_apply.php?job-id=" class="btn">Apply For Job</a>
-                    </div>
-
-                </div> -->
-
+                <?php if( $allJobs !== false ): ?>
                 <div class="cards card-4 jobs-list">
                     <?php foreach( $allJobs as $job ) : ?>
 
@@ -76,6 +54,9 @@
 
                     <?php endforeach; ?>
                 </div>
+                <?php else: ?>
+                    <center><h1>THERE ARE NO OPEN JOBS YET.  <br> CHECK BACK LATER</h1></center>
+                <?php endif; ?>
 
             </div>
 
