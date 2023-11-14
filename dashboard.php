@@ -139,6 +139,15 @@ require_once 'functions.php';
                         </div>
                     </a>
 
+                    <a href="view_my_jobs_approvals.php" class="card">
+                        <div class="icon">
+                            <i class="fas fa-id-badge"></i>
+                        </div>
+                        <div class="text">
+                            view all job pending approval
+                        </div>
+                    </a>
+
                     <?php endif; ?>
 
                     <form action="logout.php" method="post" class="card bg-danger">

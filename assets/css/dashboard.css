@@ -142,7 +142,7 @@ a:hover
     height: calc(100% - 10vh);
     width: 100%;
     /* border: red solid 2px; */
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: auto;
     padding: 1rem;
 }
