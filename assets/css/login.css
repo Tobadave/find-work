@@ -1,0 +1,224 @@
+.container
+{
+    /* border: red solid 2px; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.row
+{
+    /* border: blue solid 2px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.login-container,
+.signup-container
+{
+    /* border: red solid 2px; */
+    width: 80%;
+    height: 80%;
+}
+
+.signup-container .row
+{
+    flex-direction: row-reverse;
+}
+
+.w-100
+{
+    width: 100%;
+}
+
+.wrap,
+.login-wrap
+{
+    /* background: green; */
+    height: 100% !important;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap
+{
+    background: url('../images/Meeting.jpg'), rgb(9, 178, 9);
+    /* background: rgb(30, 144, 30); */
+    background-size: cover;
+}
+
+.signup-container .wrap
+{
+    background: url('../images/3dback.jpg'), rgb(9, 178, 9);
+    /* background: rgb(30, 144, 30); */
+    background-size: cover;
+}
+
+.wrap .text-wrap
+{
+    background: rgb(235, 235, 235);
+    padding: 0.7rem;
+    width: 80%;
+}
+
+.wrap .text-wrap h2
+{
+    text-transform: capitalize;
+    margin: 10px 0;
+}
+
+.wrap .text-wrap .btn
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgb(9, 178, 9);
+    color: rgb(235, 235, 235);
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+
+.login-wrap
+{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.login-wrap .d-flex.header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* border: red solid 2px; */
+    margin-bottom: 20px;
+}
+
+.social-media
+{
+    /* border: black solid 2px; */
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.social-media .social-icon
+{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 0 5px;
+    color: #000;
+}
+
+.signin-form{
+    display: block;
+    width: 100%;
+    /* border: red solid 2px; */
+}
+
+.signin-form .form-group
+{
+    width: 100%;
+    height: max-content;
+    display: block;
+    margin: 10px 0;
+}
+
+.signin-form .form-group label
+{
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.signin-form .form-group input,
+.signin-form .form-group select,
+.signin-form .form-group button,
+.signin-form .form-group textarea
+{
+    height: 40px;
+    width: 100%;
+    display: block;
+    background: none;
+    margin: 3px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.signin-form .form-group input[type = submit],
+.signin-form .form-group button,
+.signin-form .form-group .btn
+{
+    background: rgb(9, 178, 9);
+    color: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 876px) {
+    
+    .login-container .row
+    {
+        flex-direction: column;
+        width: 100%;
+        /* border: red solid 2px; */
+        overflow-y: auto;
+        align-items: flex-start;
+    }
+    
+    .signup-container .row
+    {
+        flex-direction: column;
+        width: 100%;
+        /* border: red solid 2px; */
+        overflow-y: auto;
+        /* align-items: flex-start; */
+    }
+
+    .wrap,
+    .login-wrap
+    {
+        width: 100%;
+    }
+
+    .wrap 
+    {
+        height: 300px ;
+        display: flex;
+        padding: 0.5rem;
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+    }
+
+    .wrap .text-wrap 
+    {
+        background-color: rgb(235, 235, 235, 0.7);
+    }
+
+}

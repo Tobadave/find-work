@@ -3,56 +3,56 @@
     require_once 'init.php';
     require_once 'functions.php';
 
-    checkIfLoggedInAndRedirect('jobposting.php');
+    // checkIfLoggedInAndRedirect('dashboard.php');
 
 ?>
 
 
 <?php include_once 'assets/layouts/head.php' ?>
-    <title>Login Page</title>
+    <title>Login Page - FindWork</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 
-    <container class="navbar">
-    <div style="display: flex; align-items: center; border-right: 1px solid rgb(2, 96, 2); padding-right: 40px;">
-        <img class="logo" src="assets/images/findwork.png" alt="">
-        <text style="color: rgb(2, 96, 2); font-weight: bold; font-size: 30px;">FindWORK</text>
-        
-
-    </div>
-        <div style="font-size: 15px; font-weight: normal; :hover{cursor: pointer;} display:none; visibility: hidden;">
-            <text>
-                My Profile
-            </text>
-            <text style="margin-left: 20px;">
-                LogOut
-            </text>
-        </div>
-
-    </container>
-    
-    <div class="main">
-            <div class="form" style="width: auto; height: 330px; padding-top: 70px; box-shadow: 5px 5px 10px rgba(49, 49, 49, 0.3); border: 1px solid rgba(0, 0, 0, 0.221); background-color: rgba(167, 167, 167, 0.111);">
-                <!-- <div class="left-section" style="flex: 10px;">
-                </div> -->
-                <form action="assets/php/login_logic.php" method="POST">
-                <div class="right-section" style="padding: 20px 0px; flex: 100px; padding: 10px 50px;">
-
-                    <center><h3 style="color: rgb(2, 43, 10)">USER LOGIN</h3></center>
-                    <div style="display: flex; flex-direction: column;">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Username or email" name="username" required>
-                    <input class="fill" style="width: 300px;" type="password" placeholder="Password" name="pass" id="" required>
-                    <input type="hidden" name="r_url" value="<?php echo getCurrentPageURL() ?>">
-
+    <div class="container">
+        <div class=" justify-content-center login-container">
+            <div class="col-md-12 col-lg-10 w-100 row">
+                <div class="wrap d-md-flex">
+                    <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                        <div class="text w-100">
+                            <h2> <i class="fas fa-user"></i> Welcome to login</h2>
+                            <p>Don't have an account?</p>
+                            <a href="signup.php" class="btn btn-white btn-outline-white">Sign Up</a>
+                        </div>
+                    </div>
                 </div>
-                <input type="submit" value="Login" style="width: 100px; padding: 5px; color: #000; float: left; border-radius: 10px; border: 
-                none; background-color: rgb(2, 43, 10);color: white;font-weight: bold; padding: 10px 20px;">
-                <text style="font-size: 15px; margin-left: 10px;">New User? <a href="signup.php">Create New Account</a></text>
 
-                    <!-- <div style="display: inline; float: right; margin-right: 60px;">
-                    New User?  <button style="">SIGN UP</button> -->
+                <div class="login-wrap p-4 p-lg-5">
+                    <div class="d-flex header">
+                        <div class="w-100">
+                            <h3 class="mb-4">Sign In</h3>
+                        </div>
+                        <div class="w-100">
+                            <p class="social-media d-flex justify-content-end">
+                                <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fab fa-facebook"></span></a>
+                                <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fab fa-twitter"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <form action="#" class="signin-form">
+                        <div class="form-group mb-3">
+                            <label class="label" for="name"> <i class="fas fa-envelope"></i> Email</label>
+                            <input type="text" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="label" for="password"> <i class="fas fa-lock"></i> Password</label>
+                        <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
             </div>
         </div>
     </div>
