@@ -113,6 +113,15 @@ require_once 'functions.php';
                         </div>
                     </a>
 
+                    <a href="view-jobs.php" target="_blank" class="card">
+                        <div class="icon">
+                            <i class="fas fa-external-link"></i>
+                        </div>
+                        <div class="text">
+                            view all jobs available on the network
+                        </div>
+                    </a>
+
                     <?php endif; ?>
 
                     <form action="logout.php" method="post" class="card bg-danger">
