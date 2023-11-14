@@ -1,3 +1,23 @@
+
+<?php
+require_once 'init.php';
+require_once 'functions.php';
+
+
+?>
+
+<?php 
+
+    $isLoggedIn = checkIfLoggedIn();
+
+    if( $isLoggedIn )
+    {
+        include_once 'view-jobs.php';
+        exit;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

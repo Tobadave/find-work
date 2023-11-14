@@ -115,57 +115,57 @@
 
             <div class="contents">
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>SN</th>
-                        <th>Job Title</th>
-                        <th>Job URL</th>
-                        <th>Job URL</th>
-                        <th>Number Of Applicants</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php foreach($myJobs as $key => $myJob): $job_id = $myJob['job_id']; ?>
-
-                        <?php 
-                            $allApplications = fetchAllDataFromATable('applications');    
-                            $filtered_applications = array_filter($allApplications, function($item) use ($job_id){
-                                return $item['job_id'] == $job_id;
-                            } );
-                        
-                            $applicationsForEachJob = array_values($filtered_applications);
-
-                            $numberOfApplications = count($applicationsForEachJob);
-
-                            $numberOfApplications = ($numberOfApplications >= 0) ? $numberOfApplications : 0;
-
-                        ?>
-
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td><?php echo $key + 1 ?></td>
-                            <td><?php echo $myJob['job_title'] ?></td>
-                            <td><?php echo $myJob['job_description'] ?></td>
-                            <td><?php echo $myJob['job_salary'] ?></td>
-                            <td align="center"><?php echo $numberOfApplications; ?></td>
-                            <td>
-                                <div class="btn-group">
-                                    <a href="view_job_to_be_approved.php?job-id=<?php echo $myJob['job_id'] ?>" class="btn"> <i class="fas fa-eye"></i> View All Applicants</a>
-                                    <!-- <form action="assets/php/delete_job_logic.php" method="post">
-                                        <input type="hidden" name="job_id" value="<?php echo $myJob['job_id'] ?>">
-                                        <button type="submit" class="bg-danger" name="delete_job"> <i class="fas fa-backspace"></i> Delete job</button>
-                                    </form> -->
-                                </div>
-                            </td>
+                            <th>SN</th>
+                            <th>Job Title</th>
+                            <th>Job URL</th>
+                            <th>Job URL</th>
+                            <th>Number Of Applicants</th>
+                            <th>Action</th>
                         </tr>
+                    </thead>
+                    <tbody>
 
-                    <?php endforeach; ?>
+                        <?php foreach($myJobs as $key => $myJob): $job_id = $myJob['job_id']; ?>
 
-                </tbody>
+                            <?php 
+                                $allApplications = fetchAllDataFromATable('applications');    
+                                $filtered_applications = array_filter($allApplications, function($item) use ($job_id){
+                                    return $item['job_id'] == $job_id;
+                                } );
+                            
+                                $applicationsForEachJob = array_values($filtered_applications);
 
-            </table>
+                                $numberOfApplications = count($applicationsForEachJob);
+
+                                $numberOfApplications = ($numberOfApplications >= 0) ? $numberOfApplications : 0;
+
+                            ?>
+
+                            <tr>
+                                <td><?php echo $key + 1 ?></td>
+                                <td><?php echo $myJob['job_title'] ?></td>
+                                <td><?php echo $myJob['job_description'] ?></td>
+                                <td><?php echo $myJob['job_salary'] ?></td>
+                                <td align="center"><?php echo $numberOfApplications; ?></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="view_job_to_be_approved.php?job-id=<?php echo $myJob['job_id'] ?>" class="btn"> <i class="fas fa-eye"></i> View All Applicants</a>
+                                        <!-- <form action="assets/php/delete_job_logic.php" method="post">
+                                            <input type="hidden" name="job_id" value="<?php echo $myJob['job_id'] ?>">
+                                            <button type="submit" class="bg-danger" name="delete_job"> <i class="fas fa-backspace"></i> Delete job</button>
+                                        </form> -->
+                                    </div>
+                                </td>
+                            </tr>
+
+                        <?php endforeach; ?>
+
+                    </tbody>
+
+                </table>
 
             </div>
 
