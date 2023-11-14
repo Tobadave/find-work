@@ -42,12 +42,13 @@
                     <form action="assets/php/login_logic.php" method="post" class="signin-form">
                         <div class="form-group mb-3">
                             <label class="label" for="name"> <i class="fas fa-envelope"></i> Email</label>
-                            <input type="text" class="form-control" placeholder="Email" required>
+                            <input type="text" class="form-control" name="username" placeholder="Email" required>
                         </div>
                         <div class="form-group mb-3">
                             <label class="label" for="password"> <i class="fas fa-lock"></i> Password</label>
-                        <input type="password" class="form-control" placeholder="Password" required>
+                        <input type="password" class="form-control" name="pass" placeholder="Password" required>
                         </div>
+                        <input type="hidden" name="r_url" value="<?php echo getCurrentPageURL(); ?>">
                         <div class="form-group">
                             <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
                         </div>
