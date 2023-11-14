@@ -3,7 +3,7 @@
     require_once 'init.php';
     require_once 'functions.php';
 
-    // checkIfLoggedInAndRedirect('dashboard.php');
+    checkIfLoggedInAndRedirect('dashboard.php');
 
 ?>
 
@@ -39,7 +39,7 @@
                             </p>
                         </div>
                     </div>
-                    <form action="#" class="signin-form">
+                    <form action="assets/php/login_logic.php" method="post" class="signin-form">
                         <div class="form-group mb-3">
                             <label class="label" for="name"> <i class="fas fa-envelope"></i> Email</label>
                             <input type="text" class="form-control" placeholder="Email" required>

@@ -1,74 +1,87 @@
 
 <?php include_once 'assets/layouts/head.php' ?>
 
-    <title>Welcome User </title>
-
-    <style>
-        input{
-            height: 35px;
-            border: none;
-            outline: none;
-        }
-    </style>
-
+    <title>Welcome User - Find Work</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 
-    <container class="navbar">
-        <div style="display: flex; align-items: center; border-right: 1px solid rgb(2, 96, 2); padding-right: 40px;">
-            <img class="logo" src="assets/images/findwork.png" alt="">
-            <text style="color: rgb(2, 96, 2); font-weight: bold; font-size: 30px;">FindWORK</text>
-        </div>
-
-        <!-- <div class="center">
-            <li><a href="">FEED</a></li>
-            <li><a href=""> HOME</a></li>
-            <li><a href=""> CONTACT US</a></li>
-
-
-        </div>
-
-            <div class="right">
-                <li>
-                    <a href="manage.php">My Profile</a>
-                </li>
-                <li style="margin-left: 20px;">
-                    <a href="logout.php">Log out</a>
-                </li>
-            </div> -->
-        </container>
-    
-    <div class="main">
-            <div class="form" style="width: auto; height: auto; box-shadow: 5px 5px 10px rgba(49, 49, 49, 0.3); border: 1px solid rgba(0, 0, 0, 0.221); background-color: rgba(167, 167, 167, 0.111); ">
-
-                <div class="right-section" style="padding: 20px 0px; flex: 100px; padding: 30px 50px;">
-
-                <form action="assets/php/signup_logic.php" method="POST">
-                    <center><h3 style="color: rgb(2, 43, 10)">OTHER INFORMATION</h3></center>
-                    <div style="display: flex; flex-direction: column;">
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter First Name" name="fname" id="" required>
-                    <input class="fill" style="width: 300px;" type="text" placeholder="Enter Last Name" name="lname" id="" required>
-                    <input class="fill" style="width: 300px;" type="tel" placeholder="Enter Phone number" name="tel" id="" required>
-
-                    <div class="info">
-                        <div class="list-items"></div>
-                        <input class="fill" style="width: 300px;" type="tel" placeholder="Enter your skills..." name="skills" id="" required>
+    <div class="container">
+            <div class=" justify-content-center login-container">
+                <div class="col-md-12 col-lg-10 w-100 row">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                            <div class="text w-100">
+                                <h2> <i class="fas fa-user"></i> Welcome to FindWork</h2>
+                                <p>Your sure place to get your next best GIG</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="info">
-                        <div class="list-items"></div>
-                        <input class="fill" style="width: 300px;" type="tel" placeholder="Enter your previous and current education insitutions..." name="education" id="" required>
+                    <div class="login-wrap p-4 p-lg-5">
+                        <div class="d-flex header">
+                            <div class="w-100">
+                                <h3 class="mb-4">My Information</h3>
+                            </div>
+                            <div class="w-100">
+                                <p class="social-media d-flex justify-content-end">
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fab fa-facebook"></span></a>
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fab fa-twitter"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <form action="assets/php/signup_logic.php" method="post" class="signin-form">
+                            <div class="form-group mb-3">
+                                <label class="label" for="name"> <i class="fas fa-user"></i> First Name</label>
+                                <input class="fill" style="width: 300px;" type="text" placeholder="Enter First Name" name="fname" id="" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="name"> <i class="fas fa-user"></i> Last Name</label>
+                                <input class="fill" style="width: 300px;" type="text" placeholder="Enter Last Name" name="lname" id="" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="name"> <i class="fas fa-phone"></i> Phone Number</label>
+                                <input class="fill" style="width: 300px;" type="tel" placeholder="Enter Phone number" name="tel" id="" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="name"> 
+                                    <div>
+                                    <i class="fas fa-toolbox"></i> Skills
+                                    </div>
+                                    <p>
+                                        <small>
+                                            Seperate each with a comma(,)
+                                        </small>
+                                    </p>
+                                </label>
+                                <input class="fill" style="width: 300px;" type="tel" placeholder="Enter your skills..." name="skills" id="" required>
+
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="name"> 
+                                    <div>
+                                        <i class="fas fa-school"></i> Education History
+                                    </div>
+                                    <p>
+                                        <small>
+                                            Seperate each with a comma(,)
+                                        </small>
+                                    </p>
+                                </label>
+                                <input class="fill" style="width: 300px;" type="tel" placeholder="Enter your previous and current education insitutions..." name="education" id="" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="name"> <i class="fas fa-link"></i> Resume URL</label>
+                                <input class="fill" style="width: 300px;" type="tel" placeholder="Paste your resume or LinkedIn URL here..." name="resume_url" id="">
+
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Continue To Profile <i class="fas fa-arrow-right"></i> </button>
+                            </div>
+                        </form>
                     </div>
-
-                    <input class="fill" style="width: 300px;" type="tel" placeholder="Paste your resume or LinkedIn URL here..." name="resume_url" id="">
-
-
-                </div>
-                <center> <input value="continue to profile" width="100%" type="submit" class="button"></center>
-            </form>
                 </div>
             </div>
-        </div>
     </div>
 
 </body>
