@@ -9,55 +9,20 @@ require_once 'functions.php';
 
 ?>
 
+<?php include_once 'assets/layouts/head.php' ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="shortcut icon" href="assets/images/findwork.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dashboard - FindWork</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <script src="http://localhost/@itms/fontawesome-free-6.4.0-web/js/all.min.js"></script>
+    <title>Dashboard - FindWork</title>
 </head>
 <body>
     
     <div class="container">
 
-        <div class="left">
-
-            <div class="header">
-                <div class="logo">
-                    <img src="assets/images/findwork.png" alt="">
-                </div>
-            </div>
-
-            <div class="main"></div>
-
-            <div class="footer"></div>
-
-        </div>
+        <?php include_once 'assets/layouts/sidebar.php' ?>
 
         <div class="right">
 
-            <div class="navbar">
+            <?php include_once 'assets/layouts/navbar2.php' ?>
 
-                <div></div>
-
-                <div class="nav-items">
-
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-user"></i>
-                        my profile
-                    </a>
-
-                    <form action="logout.php" class="nav-item">
-                        <button>logout</button>
-                    </form>
-
-                </div>
-
-            </div>
 
             <div class="contents">
 
@@ -151,10 +116,12 @@ require_once 'functions.php';
                     <?php endif; ?>
 
                     <form action="logout.php" method="post" class="card bg-danger">
-                        <div class="icon">
-                            <i class="fas fa-door-open"></i>
-                        </div>
-                        <div class="text">LOGOUT</div>
+                        <button type="submit" style="width: 100%; height: 100%;outline: none;border: none; background: transparent;color: inherit;">
+                            <div class="icon">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <div class="text">LOGOUT</div>
+                        </button>
                     </form>
 
                 </div>

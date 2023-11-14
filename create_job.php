@@ -8,54 +8,20 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="shortcut icon" href="assets/images/findwork.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include_once 'assets/layouts/head.php' ?>
+
     <title>Create a New Job Opening - FindWork</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <script src="http://localhost/@itms/fontawesome-free-6.4.0-web/js/all.min.js"></script>
 </head>
 <body>
     
     <div class="container">
 
-        <div class="left">
+        <?php include_once 'assets/layouts/sidebar.php' ?>
 
-            <div class="header">
-                <div class="logo">
-                    <img src="assets/images/findwork.png" alt="">
-                </div>
-            </div>
-
-            <div class="main"></div>
-
-            <div class="footer"></div>
-
-        </div>
 
         <div class="right">
 
-            <div class="navbar">
-
-                <div></div>
-
-                <div class="nav-items">
-
-                    <a href="#" class="nav-item">
-                        <i class="fas fa-user"></i>
-                        my profile
-                    </a>
-
-                    <form action="logout.php" class="nav-item">
-                        <button>logout</button>
-                    </form>
-
-                </div>
-
-            </div>
+            <?php include_once 'assets/layouts/navbar2.php' ?>
 
             <div class="contents">
 
