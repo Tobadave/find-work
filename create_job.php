@@ -6,6 +6,20 @@
     $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
     checkIfNotLoggedInAndRedirect($redirectUrl);
 
+    $user_info = fetchUserDetails('id', $_SESSION['id']);
+
+    if ( $user_info === false )
+    {
+        loadErrorPage('USER NOT FOUND', 'NO USER FOUND');
+        exit;
+    }
+    
+    if ( $user_info['role'] !== 'employeer' )
+    {
+        loadErrorPage('NOT AUTHORISED', 'This page cannot be accessed by You.', 403);
+        exit;
+    }
+
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>

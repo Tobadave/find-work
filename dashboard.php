@@ -7,6 +7,14 @@ require_once 'functions.php';
 
     $userDetails = fetchUserDetails('id', $_SESSION['id']);
 
+
+    if ( $userDetails === false )
+    {
+        loadErrorPage('USER NOT FOUND', 'NO USER FOUND');
+        exit;
+    }
+    
+
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>

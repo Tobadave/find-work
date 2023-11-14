@@ -1,3 +1,17 @@
+<?php 
+    // Include necessary files and functions
+    require_once 'init.php';
+    require_once 'functions.php';
+
+    $redirectUrl = 'signup.php';
+    checkIfNotLoggedInAndRedirect($redirectUrl);
+
+    if( !isset($_COOKIE['registration_status']) )
+    {
+        redirect('signup.php');
+        exit;
+    }
+?>
 
 <?php include_once 'assets/layouts/head.php' ?>
 

@@ -12,7 +12,27 @@
 
     $allJobs = fetchAllDataFromATable('jobs');
 
+    $user_info = fetchUserDetails('id', $_SESSION['id']);
+
+    if ( $user_info === false )
+    {
+        loadErrorPage('USER NOT FOUND', 'NO USER FOUND');
+        exit;
+    }
+    
+    if ( $user_info['role'] !== 'employeer' )
+    {
+        loadErrorPage('NOT AUTHORISED', 'This page cannot be accessed by You.', 403);
+        exit;
+    }
+
     // var_dump($allJobs);
+
+    if( $allJobs === false )
+    {
+        loadErrorPage('NO OPEN JOBS', 'THERE ARE NO OPEN JOBS YET.  <br> CHECK BACK LATER', 200);
+        exit;
+    }
 
     $target_id = $_SESSION['id'];
 

@@ -6,6 +6,12 @@
     $redirectUrl = 'signup.php';
     checkIfNotLoggedInAndRedirect($redirectUrl);
 
+    if( !isset($_COOKIE['registration_status']) )
+    {
+        redirect('signup.php');
+        exit;
+    }
+
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>
