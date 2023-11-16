@@ -65,7 +65,7 @@ require_once 'functions.php';
                         </div>
                     </a>
 
-                    <a href="#" class="card">
+                    <a href="view_applied_jobs.php" class="card">
                         <div class="icon">
                             <i class="fas fa-table"></i>
                         </div>
