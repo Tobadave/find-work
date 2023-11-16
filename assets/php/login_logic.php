@@ -79,12 +79,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         if ( isset($redirect_url) && ! empty( $redirect_url ) )
         {
 
-            header("Location: $redirect_url " );
+            if( filter_var($redirect_url, FILTER_VALIDATE_URL) )
+            {
+                header("Location: $redirect_url " );
+                exit();
+            }
+            else
+            {
+                header('Location: ../../dashboard.php');
+                exit();
+            }
 
         }
         else
         {
-            header("Location: ../../jobposting.php");
+            header('Location: ../../dashboard.php');
+            exit();
         }
         
     }
