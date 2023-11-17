@@ -8,7 +8,6 @@
 
 <?php
 
-
 /**
  * Redirects to the specified URL.
  *
