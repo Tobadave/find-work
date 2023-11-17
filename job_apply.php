@@ -40,10 +40,6 @@
             loadErrorPage('JOB APPLIED ALREADY', 'YOU HAVE ALREADY APPLIED FOR THIS JOB');
             exit;
         }
-        else
-        {
-            echo "FALSE";
-        }
 
     }
 

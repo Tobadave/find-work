@@ -39,6 +39,7 @@
     if ($userRole === 'client') {
         $firstName = $userDetails1['applicant_first_name'];
         $lastName = $userDetails1['applicant_last_name'];
+        $email = $userDetails1["applicant_email"];
         $phone_number = $userDetails1['applicant_phone_number'];
         $skills = $userDetails1['applicant_skills'];
         $education = $userDetails1['applicant_education_history'];
@@ -102,29 +103,34 @@
 
                             <div class="input">
                                 <label for="">first Name</label>
-                                <input type="text" name="fname">
+                                <input type="text" name="fname" value="<?php echo $firstName ;?>">
                             </div>
 
                             <div class="input">
                                 <label for="">last Name</label>
-                                <input type="text" name="lname">
+                                <input type="text" name="lname" value="<?php echo $lastName ;?>">
                             </div>
 
                         </div>
 
                         <div class="input">
                             <label for="">Email</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" value="<?php echo $email ;?>">
                         </div>
 
                         <div class="input">
                             <label for="">phone number</label>
-                            <input type="tel" name="phone">
+                            <input type="tel" name="phone" value="<?php echo $phone_number ;?>">
                         </div>
 
                         <div class="input">
                             <label for="">Resume Link</label>
-                            <input type="url" name="resume_url">
+                            <input type="url" name="resume_url" value="<?php echo $resume_url ;?>">
+                        </div>
+
+                        <div class="input">
+                            <br>
+                            <button type="submit" name="usr_info"> <i class="fas fa-user"></i> Update my information</button>
                         </div>
 
                         <?php elseif( $userRole === 'employeer' ):  ?>
@@ -158,6 +164,8 @@
 
                     </section>
                 </form>
+
+                <br>
 
                 <form method="post" action="assets/php/manage_logic.php" class="edit-profile-form" >
 

@@ -85,6 +85,102 @@
         }
     }
 
+    if(  isset($_POST['usr_info']) )
+    {
+
+        $userInfo = fetchUserDetails('applicant_id', $_SESSION['id'], 'applicants');
+
+        $first_name = $_POST['fname'];
+        $last_name = $_POST['lname'];
+        $email = $_POST['email'];
+        $phone_number = $_POST['phone'];
+        $resume_url = $_POST['resume_url'];
+
+        // Get the user ID from the session
+        $user_id = $_SESSION['id'];
+
+        // Array to track if each update operation was successful
+        $shouldContinue = [];
+
+        if( !empty($first_name) && $first_name !== $userInfo['applicant_first_name'] )
+        {
+            if ( updateItem('applicants', 'applicant_first_name', $first_name, 'applicant_id', $user_id) )
+            {
+                array_push($shouldContinue, true);
+            } else {
+                array_push($shouldContinue, false);
+            }
+            
+        } else {
+            array_push($shouldContinue, true);
+        }
+
+        if( !empty($last_name) && $last_name !== $userInfo['applicant_last_name'] )
+        {
+            if ( updateItem('applicants', 'applicant_last_name', $last_name, 'applicant_id', $user_id)  )
+            {
+                array_push($shouldContinue, true);
+            } else {
+                array_push($shouldContinue, false);
+            }
+            
+        } else {
+            array_push($shouldContinue, true);
+        }
+
+        if( !empty($phone_number) && $phone_number !== $userInfo['applicant_phone_number'] )
+        {
+            if ( updateItem('applicants', 'applicant_phone_number', $phone_number, 'applicant_id', $user_id)  )
+            {
+                array_push($shouldContinue, true);
+            } else {
+                array_push($shouldContinue, false);
+            }
+            
+        } else {
+            array_push($shouldContinue, true);
+        }
+
+        if( !empty($resume_url) && $resume_url !== $userInfo['applicant_resume_url'] )
+        {
+            if ( updateItem('applicants', 'applicant_resume_url', $resume_url, 'applicant_id', $user_id)  )
+            {
+                array_push($shouldContinue, true);
+            } else {
+                array_push($shouldContinue, false);
+            }
+            
+        } else {
+            array_push($shouldContinue, true);
+        }
+
+        if( !empty($email) && $email !== $userInfo['applicant_email'] )
+        {
+            if ( updateItem('users', 'email', $email, 'id', $user_id) )
+            {
+                array_push($shouldContinue, true);
+            } else {
+                array_push($shouldContinue, false);
+            }
+            
+        } else {
+            array_push($shouldContinue, true);
+        }
+
+        // Check if all update operations were successful
+        $allTrue = array_reduce($shouldContinue, function ($carry, $item) {
+            return $carry && $item;
+        }, true);
+
+        // Redirect based on the success of update operations
+        if ($allTrue) {
+            header('Location: ../../manage.php?code=200&message=Profile_Successfully_Updated');
+        } else {
+            header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
+        }
+
+    }
+
     if ( isset($_POST['password_info']) )
     {
 
@@ -123,5 +219,4 @@
         exit;
     }
         
-
 ?>
