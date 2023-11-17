@@ -356,6 +356,8 @@ function loadErrorPage($title, $message, $code = 500)
     /** Include the error page file to display the error content */
     include_once 'error.php';
 
+    exit;
+
     /** Note: Uncomment the line below if you want to redirect to the error page instead of including it */
     // header('Location: error.php?returnURL=' . getCurrentPageURL());
 }
