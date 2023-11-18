@@ -36,6 +36,15 @@ require_once 'functions.php';
 
                 <div class="cards card-4 admin-dashboard">
 
+                <a href="guide.php" class="card">
+                    <div class="icon">
+                        <i class="fas fa-pager"></i>
+                    </div>
+                    <div class="text">
+                        User Manual
+                    </div>
+                </a>
+
                 <?php if ( $userDetails['role'] === 'client' ): ?>
 
                     <a href="index.php" class="card">

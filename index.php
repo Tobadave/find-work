@@ -25,14 +25,17 @@ require_once 'functions.php';
     <script src="assets/js/fontawesome@6.4.0.min.js"></script>
     <link href="assets/css/dashboard.css" rel="stylesheet" />
     <link href="assets/css/index.css" rel="stylesheet" />
+
+    <!-- Load the marked library -->
+    <script src="assets/js/marked_3.3.0.min.js"></script>
     <title>FindWork - Welcome</title>
   </head>
   <body>
     <div class="s006">
-        <div class="logo">
+        <div class="logo d">
             <img src="assets/images/findwork.png" alt="Logo">
         </div>
-        <div class="login-signup">
+        <div class="login-signup d">
             <div class="icon">
                 <i class="fas fa-user"></i>
             </div>
@@ -40,7 +43,7 @@ require_once 'functions.php';
             /
             <a href="login.php">Login</a>
         </div>
-      <form>
+      <form class="d">
         <fieldset>
           <!-- <legend>What are you looking for?</legend> -->
           <div class="inner-form">
@@ -66,6 +69,54 @@ require_once 'functions.php';
           </div>
         </fieldset>
       </form>
+
+      <div id="root"></div>
+
+      <footer>
+        <br>
+        <br>
+        <center>
+          <b>
+          Copyright &copy; FindWork. 2023
+          </b>
+        </center>
+        <br>
+        <br>
+      </footer>
+
     </div>
+
+
+    <script>
+
+      /**
+       * Get the container element to display HTML content.
+       * @type {HTMLElement}
+       */
+      const container = document.getElementById('root');
+
+        /**
+         * Fetch and process the contents of ReadMe.md.
+         */
+        fetch('./INDEX.md')
+            .then(resp => resp.text())
+            .then(data => {
+
+
+                /**
+                 * Convert markdown content to HTML using the marked library.
+                 * @type {string}
+                 */
+                const htmlContents = marked(data);
+                container.innerHTML = htmlContents;
+
+              })
+            .catch(error => {
+                container.innerHTML = "<center><h1>AN ERROR OCCURED. KINDLY RELOAD THE PAGE. IF THIS MESSAGE  CONTINUES KINDLY CONTACT ME.</h1></center>";
+            });
+
+    </script>
+
+
   </body>
 </html>

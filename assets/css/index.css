@@ -145,3 +145,58 @@
     margin: 0 7px;
     letter-spacing: 2px;
 }
+
+#root
+{
+
+}
+
+.dn 
+{
+    display: none !important;
+}
+
+#root img
+{
+    max-width: 400px !important;
+    /* display: inline-flex; */
+    display: block;
+}
+
+#root section
+{
+    margin: 20px 0;
+}
+
+#root .header
+{
+    /* border: red solid 2px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+#root .header img
+{
+    margin-bottom: 20px;
+}
+
+#root .header h1
+{
+    font-size: 3rem;
+}
+
+.gallery-grid
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-grid img
+{
+    flex: 0 0 24%;
+    margin: 5px;
+    border: #000 solid 1px;
+}
