@@ -1,96 +1,193 @@
 
+<section class="header">
+
 ![Logo](assets/images/findwork.png)
 
 
-# FindWork
+<h1>FindWork</h1>
 
-FindWork is a plartform where employers and employees can post and find Jobs.
+<p>FindWork is a plartform where employers and employees can post and find Jobs.</p>
+
+<p>
+
+<a href="signup.php">
+Signup For An Account
+</a>
+..........................
+<a href="login.php">
+Login Into An Account
+</a>
+
+</p>
+
+</section>
 
 
+<section>
 
+<h2>Tech Stack</h2>
 
-## Tech Stack
+<br>
 
 **Client:** HTML, CSS, JS, NFSFU234 Form Validation Library
 
+<br>
+
 **Server:** PHP
 
+<br>
 
-## Installation
+</section>
 
-- Navigate to your `htdocs` folder
+<section>
 
-    ```bash
+<h2>Installation</h2>
+
+<ul>
+
+<li>
+- Navigate to your `htdocs` folder <br>
+<b>
+    ```
     cd C:\xampp\htdocs
     ```
+</b>
+</li>
+<br>
 
-- Clone the project
-- Paste the below code in your terminal 
+<li>
+- Clone the project <br>
+- Paste the below code in your terminal <br>
 
-    ```bash
+<b>
+    ```
     git clone https://github.com/Tobadave/find-work.git
     ```
+</b>
+</li>
+<br>
 
-- Go to the project directory
+<li>
+- Go to the project directory <br>
 
-    ```bash
+<b>
+    ```
     cd find-work
     ```
+</b>
+</li>
+<br>
 
-- Open your browser and paste the URL below
+<li>
+- Open your browser and paste the URL below <br>
 
-    ```bash
+<b>
+    ```
     http://localhost/phpmyadmin/
     ```
+</b>
+</li>
+<br>
 
+<li>
 - Create a new database named `find_work` 
-- Look for `import` tab on the page
-- Click on upload a file. Then navigate to the SQL file located in the `database` folder or using the file path below 
+</li>
 
-	```bash
+<br>
+
+<li>
+- Look for `import` tab on the page
+</li>
+<br>
+
+<li>
+- Click on upload a file. Then navigate to the SQL file located in the `database` folder or using the file path below  <br>
+
+<b>
+	```
 	find-work/assets/database/find_work.sql
 	```
+</b>
+</li>
+<br>
 
-- Then run the SQL file. Then after, visit your browser and visit the URL below: 
-	```bash
+<li>
+- Then run the SQL file. Then after, visit your browser and visit the URL below: <br>
+<b>
+	```
 	http://localhost/find-work/
 	```
+</b>
 
-    If you see a home page like the one below, then the application is set for users or employers to register.
+<br>
+<br>
 
-    ![Index Page](assets/images/previews/find-work_home_page.png)
+If you see a home page like the one below, then the application is set for users or employers to register.
+<br>
 
-## Features
+![Index Page](assets/images/previews/find-work_home_page.png)
 
+</li>
+
+</section>
+
+<section>
+
+<h2>Features</h2>
+
+<ul>
+<li>
 - Job Posting
+</li>
+<li>
 - Job Application
+</li>
+<li>
 - Login/Signup & Logout
+</li>
+<li>
 - Profile Management 
+</li>
+<li>
 - Job Status Awareness
+</li>
+<li>
 - Job Approval & Rejection
+</li>
 
+</ul>
 
-## FAQ
+</section>
 
-#### How to Create a user?
+<section>
+
+<h2>FAQ<h2>
+
+<h4>How to Create a user?</h4>
 
 Navigate to `http://localhost/find-work/signup.php`, then you fill the required informations and proceed. Your signup will be complete when you see the dashboard page.
 
-#### Can Employers create users
+<h4>Can Employers create users</h4>
 
 No. Anyone can create an account by just visiting the signup page and filling the required information.
 
+</section>
 
 
+<section>
 
-## Acknowledgements
+<h2>Acknowledgements</h2>
 
- - [NFSFU234 Form Validation Library](https://github.com/nforshifu234dev/nfsfu234-form-validation/)
-    - For Validating The Forms.
+ - [NFSFU234 Form Validation Library](https://jsdelivr.com/package/npm/nfsfu234-form-validation/)
+    - For Performing Form Validation for the Login, Signup, Job Apply forms and other forms used in this app.
 
+</section>
 
+<section class="gallery">
 
-## Screenshots
+<h2>Screenshots</h2>
+
+<section class="gallery-grid">
 
 ![App Screenshot](assets/images/previews/find-work_home_page.png)
 
@@ -102,8 +199,11 @@ No. Anyone can create an account by just visiting the signup page and filling th
 
 ![App Screenshot](assets/images/previews/find-work_view_jobs_page.png)
 
+</section>
 
-## Employers
+<h2>Employers</h2>
+
+<section class="gallery-grid">
 
 ![App Screenshot](assets/images/previews/find-work_signup_page_for_employers.png)
 
@@ -121,8 +221,12 @@ No. Anyone can create an account by just visiting the signup page and filling th
 
 ![App Screenshot](assets/images/previews/find-work_view_my_jobs_page.png)
 
+</section>
 
-## Employees
+<h2>Employees</h2>
+
+<section class="gallery-grid">
+
 
 ![App Screenshot](assets/images/previews/find-work_signup_page_for_employees.png)
 
@@ -136,3 +240,6 @@ No. Anyone can create an account by just visiting the signup page and filling th
 
 ![App Screenshot](assets/images/previews/find-work_view_applied_jobs_page.png)
 
+</section>
+
+</section>

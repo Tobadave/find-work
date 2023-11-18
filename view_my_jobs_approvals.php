@@ -25,37 +25,10 @@
         exit;
     }
 
-    // if ( !isset($_GET['job-id']) )
-    // {
-    //     loadErrorPage('JOB ID NOT FOUND', 'The JOB You are seeking to approve has either expired or does not exist.');
-    //     exit;
-    // }
-
     $allJobs = fetchAllDataFromATable('jobs');
 
-    // var_dump($allJobs);
-
     $target_id = $_SESSION['id'];
-
-    $filtered_jobs = array_filter($allJobs, function($item) use ($target_id){
-        return $item['job_author_id'] == $target_id;
-    } );
-
-    $myJobs = array_values($filtered_jobs);
-
     
-
-    // var_dump($myJobs);
-
-    // usort($allJobs, function($a, $b){
-    //     return $a['id'] - $b['id'];
-    // });
-
-    // echo "<pre>";
-    // var_dump($myJobs);
-    // echo "</pre>";
-    
-
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>
@@ -80,7 +53,11 @@
             <?php include_once 'assets/layouts/navbar2.php' ?>
 
             <div class="contents">
-
+                <?php 
+                    if( $allJobs === false ):
+                ?>
+                    <center><h1>NO JOB APPLICATIONS YET</h1></center>
+                <?php else: ?>
                 <table class="table">
                     <thead>
                         <tr>
@@ -94,44 +71,53 @@
                     </thead>
                     <tbody>
 
-                        <?php foreach($myJobs as $key => $myJob): $job_id = $myJob['job_id']; ?>
+
 
                             <?php 
-                                $allApplications = fetchAllDataFromATable('applications');    
-                                $filtered_applications = array_filter($allApplications, function($item) use ($job_id){
-                                    return $item['job_id'] == $job_id;
+
+                                $filtered_jobs = array_filter($allJobs, function($item) use ($target_id){
+                                    return $item['job_author_id'] == $target_id;
                                 } );
-                            
-                                $applicationsForEachJob = array_values($filtered_applications);
 
-                                $numberOfApplications = count($applicationsForEachJob);
-
-                                $numberOfApplications = ($numberOfApplications >= 0) ? $numberOfApplications : 0;
+                                $myJobs = array_values($filtered_jobs);
 
                             ?>
 
-                            <tr>
-                                <td><?php echo $key + 1 ?></td>
-                                <td><?php echo $myJob['job_title'] ?></td>
-                                <td><?php echo $myJob['job_description'] ?></td>
-                                <td><?php echo $myJob['job_salary'] ?></td>
-                                <td align="center"><?php echo $numberOfApplications; ?></td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a href="view_job_to_be_approved.php?job-id=<?php echo $myJob['job_id'] ?>" class="btn"> <i class="fas fa-eye"></i> View All Applicants</a>
-                                        <!-- <form action="assets/php/delete_job_logic.php" method="post">
-                                            <input type="hidden" name="job_id" value="<?php echo $myJob['job_id'] ?>">
-                                            <button type="submit" class="bg-danger" name="delete_job"> <i class="fas fa-backspace"></i> Delete job</button>
-                                        </form> -->
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php foreach($myJobs as $key => $myJob): $job_id = $myJob['job_id']; ?>
 
-                        <?php endforeach; ?>
+                                <?php 
+                                    $allApplications = fetchAllDataFromATable('applications');    
+                                    $filtered_applications = array_filter($allApplications, function($item) use ($job_id){
+                                        return $item['job_id'] == $job_id;
+                                    } );
+                                
+                                    $applicationsForEachJob = array_values($filtered_applications);
+
+                                    $numberOfApplications = count($applicationsForEachJob);
+
+                                    $numberOfApplications = ($numberOfApplications >= 0) ? $numberOfApplications : 0;
+
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $key + 1 ?></td>
+                                    <td><?php echo $myJob['job_title'] ?></td>
+                                    <td><?php echo $myJob['job_description'] ?></td>
+                                    <td><?php echo $myJob['job_salary'] ?></td>
+                                    <td align="center"><?php echo $numberOfApplications; ?></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="view_job_to_be_approved.php?job-id=<?php echo $myJob['job_id'] ?>" class="btn"> <i class="fas fa-eye"></i> View All Applicants</a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            <?php endforeach; ?>
 
                     </tbody>
 
                 </table>
+                <?php endif; ?>
 
             </div>
 

@@ -40,9 +40,6 @@
     
         $applicants = array_values($filtered_jobs);
 
-        // echo "<pre>";
-        // var_dump($applicants);
-        // echo "</pre>";
 
         foreach ($applicants as $key => $applicant) {
             
@@ -57,14 +54,12 @@
                 else
                 {
                     redirect($url . '&code=200&message=ERROR_OCCURED');
-                    // echo "NOT UPDATED";
                     exit;
                 }
 
             }
             else
             {
-                // echo "NOTHING TO DO";
                 redirect($url);
                 exit;
             }

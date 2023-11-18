@@ -82,7 +82,7 @@
         <div class="text">apply for a new job</div>
     </a>
 
-    <a href="dashboard.php" class="sidenav-link">
+    <a href="view_applied_jobs.php" class="sidenav-link">
         <div class="icon">
             <i class="fas fa-table"></i>
         </div>

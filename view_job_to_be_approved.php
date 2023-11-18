@@ -40,38 +40,13 @@
     
     $allJobs = fetchAllDataFromATable('applications');
 
-    // var_dump($allJobs);
-
     $target_id = $_GET['job-id'];
 
     $filtered_jobs = array_filter($allJobs, function($item) use ($target_id){
         return $item['job_id'] == $target_id;
     } );
 
-    $applicants = array_values($filtered_jobs);
-
-    // foreach ($applicants as $key => $applicant) {
-            
-    //     if ( $applicant['applicant_id'] != $target_id )
-    //     {
-            
-    //         loadErrorPage("NO APPLICATION", "YOU DID NOT APPLY FOR THIS JOB. <a href='job_apply.php?job-id=".  $target_id ."'>Apply Here...</a>");
-    //         exit;
-
-    //     }
-
-    // }
-
-    // var_dump($myJobs);
-
-    // usort($allJobs, function($a, $b){
-    //     return $a['id'] - $b['id'];
-    // });
-
-    // echo "<pre>";
-    // var_dump($applicants);
-    // echo "</pre>";
-    
+    $applicants = array_values($filtered_jobs);    
 
 ?>
 

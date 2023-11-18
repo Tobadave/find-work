@@ -7,6 +7,14 @@ require_once 'functions.php';
 
     $userDetails = fetchUserDetails('id', $_SESSION['id']);
 
+
+    if ( $userDetails === false )
+    {
+        loadErrorPage('USER NOT FOUND', 'NO USER FOUND');
+        exit;
+    }
+    
+
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>
@@ -27,6 +35,15 @@ require_once 'functions.php';
             <div class="contents">
 
                 <div class="cards card-4 admin-dashboard">
+
+                <a href="guide.php" class="card">
+                    <div class="icon">
+                        <i class="fas fa-pager"></i>
+                    </div>
+                    <div class="text">
+                        User Manual
+                    </div>
+                </a>
 
                 <?php if ( $userDetails['role'] === 'client' ): ?>
 
@@ -57,7 +74,7 @@ require_once 'functions.php';
                         </div>
                     </a>
 
-                    <a href="#" class="card">
+                    <a href="view_applied_jobs.php" class="card">
                         <div class="icon">
                             <i class="fas fa-table"></i>
                         </div>

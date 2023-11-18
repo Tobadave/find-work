@@ -15,17 +15,20 @@
 ?>
 
 <?php 
+        $requestData = json_decode(file_get_contents('php://input'), true);
 
-    if ( isset( $_POST['apply_for_job'] ) )
-    {
-
-        $job_id = $_POST['job_id'];
-        $applicant_id = $_POST['applicant_id'];
-        $url = $_POST['url'];
+        $job_id = $requestData['job_id'];
+        $applicant_id = $requestData['applicant_id'];
+        $url = $requestData['url'];
 
         if ( empty($job_id) || empty($applicant_id) )
         {
-            echo 'SOME REQUIRED INFORMATIONS ARE MISSING FROM YOUR REQUEST.';
+            http_response_code(200);
+            $response = array(
+                "status" => 400,
+                "message" => 'SOME REQUIRED INFORMATIONS ARE MISSING FROM YOUR REQUEST.',
+            );
+            echo json_encode($response);
             exit;
         }
 
@@ -39,18 +42,27 @@
 
         if ( mysqli_stmt_execute($stmt) )
         {
-            header("Location:" . $url . "&code=201&message=your_application_has_been_sent");
+            http_response_code(200);
+            $response = array(
+                "status" => 200,
+                "message" => 'YOUR APPLICATION HAS BEEN SENT✅',
+            );
+            echo json_encode($response);
             exit;
         }
         else
         {
-            echo "ERROR";
+            http_response_code(200);
+            $response = array(
+                "status" => 400,
+                "message" => 'An Error Occured',
+            );
+            echo json_encode($response);
             exit;
         }
         
 
 
 
-    }
 
 ?>
