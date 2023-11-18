@@ -324,6 +324,14 @@ a:hover
     position: relative;
 }
 
+.genPass
+{
+    margin: 5px 0;
+    font-weight: bold;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .edit-profile-form .input
 {
     margin: 10px 0;

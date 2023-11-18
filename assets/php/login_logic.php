@@ -102,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
             "message" => 'Login Successfull. Kindly wait as we redirect You.',
         );
         echo json_encode($response);
+        exit;
 
         // if ( isset($redirect_url) && ! empty( $redirect_url ) )
         // {
