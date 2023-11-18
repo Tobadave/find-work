@@ -7,20 +7,27 @@
 <?php
     // Check if the request method is not POST
     if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        echo "INCORRECT METHOD";
+        http_response_code(403);
+        $response = array(
+            "status" => 403,
+            "message" => 'Incorrect Method',
+        );
+        echo json_encode($response);
         exit;
     }
 
+    $requestData = json_decode(file_get_contents('php://input'), true);
+
     // Check if the form with the name "emp_info" was submitted
-    if (isset($_POST["emp_info"])) {
+    if (isset($requestData["emp_info"])) {
         // Fetch employer information from the database
         $compInfo = fetchUserDetails('employer_id', $_SESSION['id'], 'employers');
 
         // Retrieve updated employer information from the POST data
-        $employer_name = $_POST['comp_employer_name'];
-        $company_name = $_POST['comp_name'];
-        $company_email = $_POST['comp_email'];
-        $company_feild = $_POST['comp_feild'];
+        $employer_name = $requestData['comp_employer_name'];
+        $company_name = $requestData['comp_name'];
+        $company_email = $requestData['comp_email'];
+        $company_feild = $requestData['comp_feild'];
 
         // Get the user ID from the session
         $user_id = $_SESSION['id'];
@@ -79,22 +86,36 @@
 
         // Redirect based on the success of update operations
         if ($allTrue) {
-            header('Location: ../../manage.php?code=200&message=Successfully_Updated');
+            // header('Location: ../../manage.php?code=200&message=Successfully_Updated');
+            http_response_code(200);
+            $response = array(
+                "status" => 200,
+                "message" => 'Incorrect Method',
+            );
+            echo json_encode($response);
+            exit;
         } else {
-            header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
+            // header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
+            http_response_code(400);
+            $response = array(
+                "status" => 403,
+                "message" => 'An Error Occured',
+            );
+            echo json_encode($response);
+            exit;
         }
     }
 
-    if(  isset($_POST['usr_info']) )
+    if(  isset($requestData['usr_info']) )
     {
 
         $userInfo = fetchUserDetails('applicant_id', $_SESSION['id'], 'applicants');
 
-        $first_name = $_POST['fname'];
-        $last_name = $_POST['lname'];
-        $email = $_POST['email'];
-        $phone_number = $_POST['phone'];
-        $resume_url = $_POST['resume_url'];
+        $first_name = $requestData['fname'];
+        $last_name = $requestData['lname'];
+        $email = $requestData['email'];
+        $phone_number = $requestData['phone'];
+        $resume_url = $requestData['resume_url'];
 
         // Get the user ID from the session
         $user_id = $_SESSION['id'];
@@ -174,34 +195,71 @@
 
         // Redirect based on the success of update operations
         if ($allTrue) {
-            header('Location: ../../manage.php?code=200&message=Profile_Successfully_Updated');
+            // header('Location: ../../manage.php?code=200&message=Profile_Successfully_Updated');
+            http_response_code(200);
+            $response = array(
+                "status" => 200,
+                "message" => 'Updated Successfully',
+            );
+            echo json_encode($response);
+            exit;
         } else {
-            header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
+            // header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
+            http_response_code(400);
+            $response = array(
+                "status" => 400,
+                "message" => 'An Error Occured',
+            );
+            echo json_encode($response);
+            exit;
         }
 
     }
 
-    if ( isset($_POST['password_info']) )
+    if ( isset($requestData['password_info']) )
     {
 
         // Get user info for password change
         $paassword_from_db = fetchUserDetails('id',$_SESSION ['id'])['password'];
 
-        $old_password_from_user = $_POST['old_pass'];
-        $new_password_from_user = $_POST['new_pass'];
-        $confirm_password_from_user = $_POST['con_pass'];
+        $old_password_from_user = $requestData['old_pass'];
+        $new_password_from_user = $requestData['new_pass'];
+        $confirm_password_from_user = $requestData['con_pass'];
+
+        if( empty($old_password_from_user) || empty($new_password_from_user) || empty($confirm_password_from_user) )
+        {
+            http_response_code(200);
+            $response = array(
+                "status" => 403,
+                "message" => 'Empty Feilds',
+            );
+            echo json_encode($response);
+            exit;
+        }
 
         // Validate old password    
 
         if ( ! password_verify( $old_password_from_user , $paassword_from_db ) )
         {
-            echo "Your Old Password does not match. Try again";
+            // echo "Your Old Password does not match. Try again";
+            // exit;
+            http_response_code(200);
+            $response = array(
+                "status" => 400,
+                "message" => 'Your Old Password is not correct',
+            );
+            echo json_encode($response);
             exit;
         }
 
         if ( ! hash_equals( $new_password_from_user, $confirm_password_from_user ) )
         {
-            echo "Your New Passwords Don't Match";
+            http_response_code(200);
+            $response = array(
+                "status" => 400,
+                "message" => 'Your New Passwords do not match',
+            );
+            echo json_encode($response);
             exit;
         }
 
@@ -210,13 +268,34 @@
         // Update new password in database
         if (!updateItem('users','password',$new_password_from_user,'id',$_SESSION['id']))
         {
-            echo "AN ERROR Occured and Your Password Could not be CHanged";
+            // echo "AN ERROR Occured and Your Password Could not be CHanged";
+            // exit;
+            http_response_code(200);
+            $response = array(
+                "status" => 403,
+                "message" => 'An Error Occured',
+            );
+            echo json_encode($response);
             exit;
         }
 
-        echo "SUCCESS";
-        header('Location: ../../manage.php?code=200&message=Password_Changed_Success');
+        // echo "SUCCESS";
+        // header('Location: ../../manage.php?code=200&message=Password_Changed_Success');
+        http_response_code(200);
+        $response = array(
+            "status" => 200,
+            "message" => ' Password Updated Successfully',
+        );
+        echo json_encode($response);
         exit;
     }
+
+    http_response_code(200);
+    $response = array(
+        "status" => 400,
+        "message" => 'UNKOWN ERROR',
+    );
+    echo json_encode($response);
+    exit;
         
 ?>

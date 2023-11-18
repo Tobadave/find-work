@@ -151,7 +151,7 @@
                     }, 5000);
                     
                 }
-
+                formValidator.reset();
                 formValidator.displayError(errorDetails);
 
             })
