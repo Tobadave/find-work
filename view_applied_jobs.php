@@ -30,6 +30,11 @@
     // var_dump($allJobs);
     // echo "</pre>";
 
+    if( $allJobs === false )
+    {
+        loadErrorPage('NO JOBS APPLIED YET', 'YOU HAVE NOT YET APPLIED FOR ANY JOB', 200);
+    }
+
     $target_id = $_SESSION['id'];
 
     $filtered_jobs = array_filter($allJobs, function($item) use ($target_id){
