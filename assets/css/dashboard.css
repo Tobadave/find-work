@@ -319,6 +319,11 @@ a:hover
     display: block;
 }
 
+.edit-profile-form .form-group
+{
+    position: relative;
+}
+
 .edit-profile-form .input
 {
     margin: 10px 0;

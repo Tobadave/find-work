@@ -10,10 +10,18 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
-    $username = $_POST['username'];
-    $password = $_POST['pass'];
+    // $username = $_POST['username'];
+    // $password = $_POST['pass'];
 
-    $redirect_url = $_POST['r_url'];
+    // $redirect_url = $_POST['r_url'];
+
+    $requestData = json_decode(file_get_contents('php://input'), true);
+
+    $username = $requestData['username'];
+    $password = $requestData['pass'];
+
+    $redirect_url = $requestData['r_url'];
+
     $redirect_url = parse_url($redirect_url, PHP_URL_QUERY);
 
     $params = array();
@@ -43,7 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         if ( mysqli_num_rows($results) !== 1 )
         {
-            echo "USER NOT FOUND";
+            // echo "USER NOT FOUND";
+            http_response_code(200);
+            $response = array(
+                "status" => 400,
+                "message" => 'User Not Found',
+            );
+            echo json_encode($response);
             exit;
         }
 
@@ -63,7 +77,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         if ( ! password_verify($password, $paassword_from_db) )
         {
-            echo "PASSWORD IS NOT CORRECT";
+            // echo "PASSWORD IS NOT CORRECT";
+            http_response_code(200);
+            $response = array(
+                "status" => 400,
+                "message" => 'Password is not correct',
+            );
+            echo json_encode($response);
             exit;
         }
 
@@ -76,31 +96,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         loginUser($results['id'], $username);
 
-        if ( isset($redirect_url) && ! empty( $redirect_url ) )
-        {
+        http_response_code(200);
+        $response = array(
+            "status" => 200,
+            "message" => 'Login Successfull. Kindly wait as we redirect You.',
+        );
+        echo json_encode($response);
 
-            if( filter_var($redirect_url, FILTER_VALIDATE_URL) )
-            {
-                header("Location: $redirect_url " );
-                exit();
-            }
-            else
-            {
-                header('Location: ../../dashboard.php');
-                exit();
-            }
+        // if ( isset($redirect_url) && ! empty( $redirect_url ) )
+        // {
 
-        }
-        else
-        {
-            header('Location: ../../dashboard.php');
-            exit();
-        }
+        //     if( filter_var($redirect_url, FILTER_VALIDATE_URL) )
+        //     {
+        //         // header("Location: $redirect_url " );
+        //         header('refresh:5;url= ../../dashboard.php');
+        //         exit();
+        //     }
+        //     else
+        //     {
+        //         header('refresh:5;url= ../../dashboard.php');
+        //         exit();
+        //     }
+
+        // }
+        // else
+        // {
+        //     header('Location: ../../dashboard.php');
+        //     exit();
+        // }
         
     }
     else
     {
-        echo "<script type='text/javascript'> alert('Please Enter some valid Information')</script>";
+        // echo "<script type='text/javascript'> alert('Please Enter some valid Information')</script>";
+        http_response_code(200);
+        $response = array(
+            "status" => 400,
+            "message" => 'Empty Fields',
+        );
+        echo json_encode($response);
+        exit;
     }
 }
 
