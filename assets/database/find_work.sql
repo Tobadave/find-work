@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 07:56 AM
+-- Generation Time: Nov 18, 2023 at 11:29 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -112,13 +112,16 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `applicants`
   ADD PRIMARY KEY (`SN`),
+  ADD UNIQUE KEY `applicant_id` (`applicant_id`),
   ADD KEY `applicant_email` (`applicant_email`);
 
 --
 -- Indexes for table `applications`
 --
 ALTER TABLE `applications`
-  ADD PRIMARY KEY (`SN`);
+  ADD PRIMARY KEY (`SN`),
+  ADD KEY `applicant_id` (`applicant_id`),
+  ADD KEY `job_id` (`job_id`);
 
 --
 -- Indexes for table `employers`
@@ -187,6 +190,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `applicants`
   ADD CONSTRAINT `applicant_email` FOREIGN KEY (`applicant_email`) REFERENCES `users` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `applications`
+--
+ALTER TABLE `applications`
+  ADD CONSTRAINT `applicant_id` FOREIGN KEY (`applicant_id`) REFERENCES `applicants` (`applicant_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `job_id` FOREIGN KEY (`job_id`) REFERENCES `jobs` (`job_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `employers`
