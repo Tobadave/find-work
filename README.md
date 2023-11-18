@@ -57,6 +57,8 @@ FindWork is a plartform where employers and employees can post and find Jobs.
 
     If you see a home page like the one below, then the application is set for users or employers to register.
 
+    ![Index Page](assets/images/previews/find-work_home_page.png)
+
 ## Features
 
 - Job Posting
@@ -89,5 +91,47 @@ No. Anyone can create an account by just visiting the signup page and filling th
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](assets/images/previews/find-work_home_page.png)
+
+![App Screenshot](assets/images/previews/find-work_login_page.png)
+
+![App Screenshot](assets/images/previews/find-work_signup_page.png)
+
+![App Screenshot](assets/images/previews/find-work_error_page.png)
+
+![App Screenshot](assets/images/previews/find-work_view_jobs_page.png)
+
+
+## Employers
+
+![App Screenshot](assets/images/previews/find-work_signup_page_for_employers.png)
+
+![App Screenshot](assets/images/previews/find-work_dashboard_for_employers.png)
+
+![App Screenshot](assets/images/previews/find-work_create_job_page.png)
+
+![App Screenshot](assets/images/previews/find-work_manage_profile_for_employers.png)
+
+![App Screenshot](assets/images/previews/find-work_signup_page_for_employers.png)
+
+![App Screenshot](assets/images/previews/find-work_view_job_to_be_approved_page.png)
+
+![App Screenshot](assets/images/previews/find-work_view_my_jobs_approvals_page.png)
+
+![App Screenshot](assets/images/previews/find-work_view_my_jobs_page.png)
+
+
+## Employees
+
+![App Screenshot](assets/images/previews/find-work_signup_page_for_employees.png)
+
+![App Screenshot](assets/images/previews/find-work_dashboard_for_employees.png)
+
+![App Screenshot](assets/images/previews/find-work_job_apply_page.png)
+
+![App Screenshot](assets/images/previews/find-work_manage_profile_for_employees.png)
+
+![App Screenshot](assets/images/previews/find-work_signup_page_for_employers.png)
+
+![App Screenshot](assets/images/previews/find-work_view_applied_jobs_page.png)
 
