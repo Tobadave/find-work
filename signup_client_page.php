@@ -130,7 +130,6 @@
             responsePromise 
                 .then((response) => {
                 // Success: Server response received in JSON format
-                console.log('Request successful', response);
 
                 if( response.status !== 200 )
                 {

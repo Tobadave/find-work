@@ -20,18 +20,6 @@
         unset($_SESSION['name']);
         redirect('login.php?message=logout_successful&code=200');
 
-
-        // if ( unset($_SESSION['id']) && unset($_SESSION['name']) )
-        // {
-        //     redirect('login.php?message=logout_successful&code=200');
-        // }
-        // else
-        // {
-        //     echo "AN ERROR OCCURED";
-        //     exit;
-        // }
-
-
     }
     else
     {

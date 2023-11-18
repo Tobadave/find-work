@@ -1,6 +1,5 @@
 .container
 {
-    /* border: red solid 2px; */
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,7 +12,6 @@
 
 .row
 {
-    /* border: blue solid 2px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +21,6 @@
 .login-container,
 .signup-container
 {
-    /* border: red solid 2px; */
     width: 80%;
     height: 80%;
 }
@@ -41,7 +38,6 @@
 .wrap,
 .login-wrap
 {
-    /* background: green; */
     height: 100% !important;
     width: 50%;
     display: flex;
@@ -52,14 +48,12 @@
 .wrap
 {
     background: url('../images/Meeting.jpg'), rgb(9, 178, 9);
-    /* background: rgb(30, 144, 30); */
     background-size: cover;
 }
 
 .signup-container .wrap
 {
     background: url('../images/3dback.jpg'), rgb(9, 178, 9);
-    /* background: rgb(30, 144, 30); */
     background-size: cover;
 }
 
@@ -94,7 +88,6 @@
 .login-wrap
 {
     flex-direction: column;
-    /* align-items: flex-start; */
     padding: 2rem;
     border: #000 solid 1px !important;
 }
@@ -110,13 +103,11 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    /* border: red solid 2px; */
     margin-bottom: 20px;
 }
 
 .social-media
 {
-    /* border: black solid 2px; */
     display: flex;
     align-items: center;
     justify-content: right;
@@ -139,7 +130,6 @@
 .signin-form{
     display: block;
     width: 100%;
-    /* border: red solid 2px; */
 }
 
 .signin-form .form-group
@@ -148,7 +138,6 @@
     height: max-content;
     display: block;
     margin: 10px 0;
-    /* border: red solid 2px; */
 }
 
 .signin-form .form-group label
@@ -194,7 +183,6 @@
     {
         flex-direction: column;
         width: 100%;
-        /* border: red solid 2px; */
         overflow-y: auto;
         align-items: flex-start;
     }
@@ -203,9 +191,7 @@
     {
         flex-direction: column;
         width: 100%;
-        /* border: red solid 2px; */
         overflow-y: auto;
-        /* align-items: flex-start; */
     }
 
     .wrap,

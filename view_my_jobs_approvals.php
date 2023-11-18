@@ -25,29 +25,10 @@
         exit;
     }
 
-    // if ( !isset($_GET['job-id']) )
-    // {
-    //     loadErrorPage('JOB ID NOT FOUND', 'The JOB You are seeking to approve has either expired or does not exist.');
-    //     exit;
-    // }
-
     $allJobs = fetchAllDataFromATable('jobs');
-
-    // var_dump($allJobs);
 
     $target_id = $_SESSION['id'];
     
-    // var_dump($myJobs);
-
-    // usort($allJobs, function($a, $b){
-    //     return $a['id'] - $b['id'];
-    // });
-
-    // echo "<pre>";
-    // var_dump($myJobs);
-    // echo "</pre>";
-    
-
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>
@@ -127,10 +108,6 @@
                                     <td>
                                         <div class="btn-group">
                                             <a href="view_job_to_be_approved.php?job-id=<?php echo $myJob['job_id'] ?>" class="btn"> <i class="fas fa-eye"></i> View All Applicants</a>
-                                            <!-- <form action="assets/php/delete_job_logic.php" method="post">
-                                                <input type="hidden" name="job_id" value="<?php echo $myJob['job_id'] ?>">
-                                                <button type="submit" class="bg-danger" name="delete_job"> <i class="fas fa-backspace"></i> Delete job</button>
-                                            </form> -->
                                         </div>
                                     </td>
                                 </tr>

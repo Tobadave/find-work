@@ -45,7 +45,6 @@ require_once 'functions.php';
         </div>
       <form action="login.php" class="d">
         <fieldset>
-          <!-- <legend>What are you looking for?</legend> -->
           <div class="inner-form">
               <legend>What are you looking for?</legend>
                 <div class="input-field">

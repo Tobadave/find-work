@@ -26,10 +26,6 @@
     
     $allJobs = fetchAllDataFromATable('applications');
     
-    // echo "<pre>";
-    // var_dump($allJobs);
-    // echo "</pre>";
-
     if( $allJobs === false )
     {
         loadErrorPage('NO JOBS APPLIED YET', 'YOU HAVE NOT YET APPLIED FOR ANY JOB', 200);
@@ -42,12 +38,6 @@
     } );
 
     $my_jobs = array_values($filtered_jobs);
-
-
-    // echo "<pre>";
-    // var_dump($my_jobs);
-    // echo "</pre>";
-    
 
 ?>
 

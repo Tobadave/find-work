@@ -12,7 +12,6 @@
     $error_error_message =  isset($_SESSION['error_page_message']) && !empty($_SESSION['error_page_message']) ? $_SESSION['error_page_message'] : 'An Error Occured. Kindly Contact The Admin';
     $error_title =  isset($_SESSION['error_page_title']) && !empty($_SESSION['error_page_title']) ? $_SESSION['error_page_title'] : 'An Error Occured. Kindly Contact The Admin';
 
-    // http_response_code($error_code);
 
 ?>
 
@@ -82,7 +81,6 @@
             text-decoration: none;
             color: green;
             font-size: 20px;
-            /* display: block; */
             margin: 10px;
             display: inline-flex;
         }
@@ -93,7 +91,7 @@
         }
 
     </style>
-    <script src="http://localhost/@itms/fontawesome-free-6.4.0-web/js/all.min.js"></script>
+    <script src="assets/js/fontawesome@6.4.0.min.js"></script>
 
 </head>
 <body>

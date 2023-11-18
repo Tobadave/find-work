@@ -4,12 +4,6 @@
     require_once 'init.php';
     require_once 'functions.php';
 
-    // Set the redirect URL to the login page with the current page URL as a parameter
-    // $redirectUrl = 'login.php?redirect=' . getCurrentPageURL();
-
-    // Check if the user is not logged in and redirect to the login page if necessary
-    // checkIfNotLoggedInAndRedirect($redirectUrl);
-
     $allJobs = fetchAllDataFromATable('jobs');
 
 ?>

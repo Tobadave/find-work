@@ -51,12 +51,6 @@
         loadErrorPage('JOB ID NOT FOUND', 'The JOB You are seeking to apply has either expired or does not exist.');
         exit;
     }
-
-    // echo "<pre>";
-    // var_dump($job_info);
-    // var_dump($user_info);
-    // echo "</pre>";
-
 ?>
 
 <?php 
@@ -265,7 +259,6 @@
             responsePromise 
                 .then((response) => {
                 // Success: Server response received in JSON format
-                // console.log('Request successful', response);
 
                 if( response.status !== 200 )
                 {

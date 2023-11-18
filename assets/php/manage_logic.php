@@ -86,7 +86,6 @@
 
         // Redirect based on the success of update operations
         if ($allTrue) {
-            // header('Location: ../../manage.php?code=200&message=Successfully_Updated');
             http_response_code(200);
             $response = array(
                 "status" => 200,
@@ -95,7 +94,6 @@
             echo json_encode($response);
             exit;
         } else {
-            // header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
             http_response_code(400);
             $response = array(
                 "status" => 403,
@@ -195,7 +193,6 @@
 
         // Redirect based on the success of update operations
         if ($allTrue) {
-            // header('Location: ../../manage.php?code=200&message=Profile_Successfully_Updated');
             http_response_code(200);
             $response = array(
                 "status" => 200,
@@ -204,7 +201,6 @@
             echo json_encode($response);
             exit;
         } else {
-            // header('Location: ../../manage.php?code=200&message=An_Error_Occurred_Please_Try_Again_Later');
             http_response_code(400);
             $response = array(
                 "status" => 400,
@@ -241,8 +237,6 @@
 
         if ( ! password_verify( $old_password_from_user , $paassword_from_db ) )
         {
-            // echo "Your Old Password does not match. Try again";
-            // exit;
             http_response_code(200);
             $response = array(
                 "status" => 400,
@@ -268,8 +262,6 @@
         // Update new password in database
         if (!updateItem('users','password',$new_password_from_user,'id',$_SESSION['id']))
         {
-            // echo "AN ERROR Occured and Your Password Could not be CHanged";
-            // exit;
             http_response_code(200);
             $response = array(
                 "status" => 403,
@@ -279,8 +271,6 @@
             exit;
         }
 
-        // echo "SUCCESS";
-        // header('Location: ../../manage.php?code=200&message=Password_Changed_Success');
         http_response_code(200);
         $response = array(
             "status" => 200,

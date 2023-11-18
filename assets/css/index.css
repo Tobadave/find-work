@@ -1,6 +1,5 @@
 .s006
 {
-    /* border: red solid 2px; */
     padding: 0.5rem;
     height: 100%;
     width: 100%;
@@ -42,7 +41,6 @@
 {
     display: flex;
     align-items: center;
-    /* border: blue solid 2px; */
     border-radius: 20px ;
     overflow: hidden;
     background: #fff;
@@ -62,7 +60,6 @@
 .inner-form button
 {
     width: 90px;
-    /* border: red solid 2px; */
 }
 
 .inner-form button svg
@@ -81,7 +78,6 @@
 
 .suggestion-wrap
 {
-    /* border: red solid 2px; */
     max-width: 75%;
     display: flex;
     flex-wrap: wrap;
@@ -110,8 +106,6 @@
     left: 20px;
     max-width: 200px;
     height: 70px;
-    /* height: max-content; */
-    /* border: red solid 2px; */
 }
 
 .logo img
@@ -127,8 +121,6 @@
     top: 20px;
     right: 20px;
     display: flex;
-    /* height: max-content; */
-    /* border: red solid 2px; */
     font-size: 18px;
     font-weight: bold;
 }
@@ -159,7 +151,6 @@
 #root img
 {
     max-width: 400px !important;
-    /* display: inline-flex; */
     display: block;
 }
 
@@ -170,7 +161,6 @@
 
 #root .header
 {
-    /* border: red solid 2px; */
     display: flex;
     align-items: center;
     justify-content: center;

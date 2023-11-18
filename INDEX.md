@@ -30,7 +30,6 @@ Login Into An Account
 <br>
 
 **Client:** HTML, CSS, JS, NFSFU234 Form Validation Library
-**Client:** HTML, CSS
 
 <br>
 
@@ -49,57 +48,82 @@ Login Into An Account
 <li>
 - Navigate to your `htdocs` folder <br>
 <b>
-    ```bash
+    ```
     cd C:\xampp\htdocs
     ```
 </b>
 </li>
+<br>
 
 <li>
-- Clone the project
+- Clone the project <br>
+- Paste the below code in your terminal <br>
 
-    ```bash
-    git clone https://link-to-project
+<b>
     ```
+    git clone https://github.com/Tobadave/find-work.git
+    ```
+</b>
 </li>
+<br>
 
 <li>
-- Go to the project directory
+- Go to the project directory <br>
 
-    ```bash
+<b>
+    ```
     cd find-work
     ```
+</b>
 </li>
+<br>
 
 <li>
-- Open your browser and paste the URL below
+- Open your browser and paste the URL below <br>
 
-    ```bash
+<b>
+    ```
     http://localhost/phpmyadmin/
     ```
+</b>
 </li>
+<br>
 
 <li>
 - Create a new database named `find_work` 
 </li>
+
+<br>
+
 <li>
 - Look for `import` tab on the page
 </li>
-<li>
-- Click on upload a file. Then navigate to the SQL file located in the `database` folder or using the file path below 
+<br>
 
-	```bash
+<li>
+- Click on upload a file. Then navigate to the SQL file located in the `database` folder or using the file path below  <br>
+
+<b>
+	```
 	find-work/assets/database/find_work.sql
 	```
+</b>
 </li>
+<br>
 
 <li>
-- Then run the SQL file. Then after, visit your browser and visit the URL below: 
-	```bash
+- Then run the SQL file. Then after, visit your browser and visit the URL below: <br>
+<b>
+	```
 	http://localhost/find-work/
 	```
+</b>
+
+<br>
+<br>
 
 If you see a home page like the one below, then the application is set for users or employers to register.
+<br>
 
 ![Index Page](assets/images/previews/find-work_home_page.png)
 

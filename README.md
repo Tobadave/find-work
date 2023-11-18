@@ -25,9 +25,10 @@ FindWork is a plartform where employers and employees can post and find Jobs.
     ```
 
 - Clone the project
+- Paste the below code in your terminal 
 
     ```bash
-    git clone https://link-to-project
+    git clone https://github.com/Tobadave/find-work.git
     ```
 
 - Go to the project directory

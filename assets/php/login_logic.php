@@ -10,10 +10,6 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
-    // $username = $_POST['username'];
-    // $password = $_POST['pass'];
-
-    // $redirect_url = $_POST['r_url'];
 
     $requestData = json_decode(file_get_contents('php://input'), true);
 
@@ -30,14 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
     $redirect_url = ( isset($params['redirect']) && filter_var( $params['redirect'], FILTER_VALIDATE_URL ) !== false ) ? $params['redirect'] : $redirect_url;
 
-    // echo $username . "<br>";
-    // echo $firstname . "<br>";
-    // echo $lastname . "<br>";
-    // echo $telephone . "<br>";
-    // echo $password . "<br>";
-
-    // exit;
-
     if(!empty($username) && !empty($password))
     {
 
@@ -51,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         if ( mysqli_num_rows($results) !== 1 )
         {
-            // echo "USER NOT FOUND";
             http_response_code(200);
             $response = array(
                 "status" => 400,
@@ -63,17 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
 
         $results = mysqli_fetch_assoc($results);
 
-        // echo "<pre>";
-        // var_dump($results);
-        // echo "</pre>";
-
         $paassword_from_db = $results['password'];
 
-        // echo $paassword_from_db . '<br>';
-
-        // echo password_verify($password, $paassword_from_db);
-
-        // exit;
 
         if ( ! password_verify($password, $paassword_from_db) )
         {
@@ -87,13 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
             exit;
         }
 
-        // echo "<h1>YOU ARE SUCCESSFULLY LOGGED IN. START SESSION CREATION</h1>";
-
-        // session_start();
-
-        // $_SESSION['id'] = $results['id'];
-        // $_SESSION['name'] = $results['fname'] . $results['lname'];
-
         loginUser($results['id'], $username);
 
         http_response_code(200);
@@ -103,33 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
         );
         echo json_encode($response);
         exit;
-
-        // if ( isset($redirect_url) && ! empty( $redirect_url ) )
-        // {
-
-        //     if( filter_var($redirect_url, FILTER_VALIDATE_URL) )
-        //     {
-        //         // header("Location: $redirect_url " );
-        //         header('refresh:5;url= ../../dashboard.php');
-        //         exit();
-        //     }
-        //     else
-        //     {
-        //         header('refresh:5;url= ../../dashboard.php');
-        //         exit();
-        //     }
-
-        // }
-        // else
-        // {
-        //     header('Location: ../../dashboard.php');
-        //     exit();
-        // }
         
     }
     else
     {
-        // echo "<script type='text/javascript'> alert('Please Enter some valid Information')</script>";
         http_response_code(200);
         $response = array(
             "status" => 400,

@@ -23,8 +23,6 @@
 
         if ( empty($job_id) || empty($applicant_id) )
         {
-            // echo 'SOME REQUIRED INFORMATIONS ARE MISSING FROM YOUR REQUEST.';
-            // exit;
             http_response_code(200);
             $response = array(
                 "status" => 400,
@@ -44,8 +42,6 @@
 
         if ( mysqli_stmt_execute($stmt) )
         {
-            // header("Location:" . $url . "&code=201&message=your_application_has_been_sent");
-            // exit;
             http_response_code(200);
             $response = array(
                 "status" => 200,
@@ -56,8 +52,6 @@
         }
         else
         {
-            // echo "ERROR";
-            // exit;
             http_response_code(200);
             $response = array(
                 "status" => 400,

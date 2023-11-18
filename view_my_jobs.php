@@ -42,17 +42,6 @@
 
     $myJobs = array_values($filtered_jobs);
 
-    // var_dump($myJobs);
-
-    // usort($allJobs, function($a, $b){
-    //     return $a['id'] - $b['id'];
-    // });
-
-    // echo "<pre>";
-    // var_dump($myJobs);
-    // echo "</pre>";
-    
-
 ?>
 
 <?php include_once 'assets/layouts/head.php' ?>

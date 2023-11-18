@@ -137,8 +137,6 @@
 
             responsePromise 
                 .then((response) => {
-                // Success: Server response received in JSON format
-                // console.log('Request successful', response);
 
                 if( response.status !== 200 )
                 {
@@ -166,8 +164,6 @@
                         const returnURL = `signup_${role}_page.php`;
 
                         window.location.href = returnURL;
-
-                        // console.log(returnURL);
 
                     }, 5000);
 
