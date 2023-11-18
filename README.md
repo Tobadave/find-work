@@ -55,7 +55,7 @@ FindWork is a plartform where employers and employees can post and find Jobs.
 	http://localhost/find-work/
 	```
 
-    If you see a home page, then the application is set for users or employers to register.
+    If you see a home page like the one below, then the application is set for users or employers to register.
 
 ## Features
 
