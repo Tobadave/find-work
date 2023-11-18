@@ -48,8 +48,9 @@
                         <div class="form-group mb-3">
                             <label class="label" for="password"> <i class="fas fa-lock"></i> Password</label>
                             <input type="password" class="form-control" name="pass" data-attr-name="pass" placeholder="Password" required>
-                            <div class=" js-togglePassword">
-                                Show Password
+                            <div class="password-icon cssShowPassword js-togglePassword">
+                                <!-- Show Password -->
+                                <i class="far fa-eye"></i>
                             </div>
                         </div>
                         <input type="hidden" name="r_url" id="r_url" data-attr-name="r_url" value="<?php echo getCurrentPageURL(); ?>">
@@ -99,8 +100,8 @@
             // This will be used to toggle the visibility of an input feild with type of password
         formValidator.togglePasswordVisibility( 
             {
-                show: "Show Password",
-                hide: "Hide Password",
+                show: "<i class='far fa-eye'></i>",
+                hide: "<i class='far fa-eye-slash'></i>",
             }
         );
 
