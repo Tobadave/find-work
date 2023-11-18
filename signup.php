@@ -20,11 +20,12 @@
             <div class=" justify-content-center signup-container">
                 <div class="col-md-12 col-lg-10 w-100 row">
                     <div class="wrap d-md-flex">
-                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                        <div class="text-wrap p-4 p-lg-5 d-flex align-items-center order-md-last">
                             <div class="text w-100">
                                 <h2> <i class="fas fa-pen"></i> Welcome to Signup</h2>
                                 <p>Already have an account?</p>
                                 <a href="login.php" class="btn btn-white btn-outline-white">Log In</a>
+                                <a href="index.php" class="text-center display-block" style="margin: 15px 0;" > <i class="fas fa-home"></i> Go Home</a>
                             </div>
                         </div>
                     </div>

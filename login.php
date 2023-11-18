@@ -23,6 +23,7 @@
                             <h2> <i class="fas fa-user"></i> Welcome to login</h2>
                             <p>Don't have an account?</p>
                             <a href="signup.php" class="btn btn-white btn-outline-white">Sign Up</a>
+                            <a href="index.php" class="text-center display-block" style="margin: 15px 0;" > <i class="fas fa-home"></i> Go Home</a>
                         </div>
                     </div>
                 </div>
