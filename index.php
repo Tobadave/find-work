@@ -43,7 +43,7 @@ require_once 'functions.php';
             /
             <a href="login.php">Login</a>
         </div>
-      <form class="d">
+      <form action="login.php" class="d">
         <fieldset>
           <!-- <legend>What are you looking for?</legend> -->
           <div class="inner-form">
